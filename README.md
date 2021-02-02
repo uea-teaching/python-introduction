@@ -18,5 +18,4 @@ I will make the slides available online *and* I will try to keep this material l
 
 ### Functions in Python
 
-The first lecture covers Functions in Python.
-
+The first [lecture](lectures/lecture1/) covers Functions in Python.
