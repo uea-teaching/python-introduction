@@ -107,23 +107,114 @@ my_function()
 
 ## values can be passed into functions as arguments
 
-Arguments are separated by a comma, inside the parentheses of the function definition.
+Parameters are separated by a comma, inside the parentheses of the function definition.
 <!-- .element: class="fragment" -->
 
 ---
 
+This function has one parameter
+
 ```python
 def times_two(a):
-    """print 'a' times 2."""
     print(a * 2)
 ```
+<!-- .element: class="fragment" -->
+
+```c
+times_two(3)
+>>> 6
+```
+<!-- .element: class="fragment" -->
 
 ---
 
-```python [1|2|3]
-def times_two(a):
-    """print 'a' times 2."""
-    print(a * 2)
-```
+# Parameters or Arguments
+
+A *parameter* is a variable in a function definition. 
+When a function is called, the *arguments* are the 
+data you pass into the function's parameters.
+<!-- .element: class="fragment" -->
 
 ---
+
+## Number of Arguments
+
+A function must be called with the correct number of arguments. 
+<!-- .element: class="fragment" -->
+If your function expects 2 arguments, you have to call the function 
+with 2 arguments, not more, and not less.
+<!-- .element: class="fragment" -->
+
+---
+
+### Example - wrong number of arguments
+
+```python
+def sum_two(a, b):
+    print(a + b)
+```
+<!-- .element: class="fragment" -->
+
+```c
+sum_two(3)
+```
+<!-- .element: class="fragment" -->
+
+```
+TypeError: 
+  sum_two() missing 1 required positional argument: 'b'
+```
+<!-- .element: class="fragment" -->
+
+---
+
+### Arbitrary Arguments: `*args`
+
+```python
+def print_numbers(*numbers):
+    for number in numbers:
+        print(number)
+
+print_numbers(1, 2, 3)
+```
+
+```
+  1
+  2
+  3
+```
+
+Note:
+If you do not know how many arguments that will be passed into your function, 
+add a * before the parameter name in the function definition.
+This way the function will receive a tuple of arguments, 
+and can access the items accordingly.
+
+---
+
+## Keyword Arguments
+<!-- .element: class="fragment" -->
+You can pass arguments with the `key = value` syntax.
+<!-- .element: class="fragment" -->
+This way, the order of the arguments does not matter.
+<!-- .element: class="fragment" -->
+
+---
+
+## Example
+
+```python [1-2| 4]
+def sum_two(a, b):
+    print(a + b)
+
+sum_two(b=3, a=2)
+```
+<!-- .element: class="fragment" -->
+
+```c
+5
+```
+<!-- .element: class="fragment" -->
+
+---
+
