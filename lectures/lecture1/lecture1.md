@@ -240,7 +240,7 @@ sum_three(c=3, a=1, b=2)
 
 ---
 
-In this example the function receives a **dictionary** of arguments.
+In this example the function receives a <span style="color:coral">*dictionary*</span> of arguments.
 
 Consult the Python documents to understand the `kwargs.get()` function used here.
 
@@ -331,7 +331,45 @@ dev_function()
 
 # Return Values
 
-To let a function return a value, use the return statement
+---
+
+To let a function return a value, use the `return` statement
+
+---
+
+#### Example
+
+```python [1-2|4|5]
+def return_sum_two(a, b):
+    return a + b
+
+result = return_sum_two(2, b=3)
+print(result)
+```
+
+---
+
+## Lambda Functions
+
+---
+
+## Nested functions
+
+---
+
+## Callbacks
+
+--- 
+
+## Recursion
+
+---
+
+## Doc Strings
+
+___
+
+## Generator Function
 
 ---
 
