@@ -188,14 +188,6 @@ def print_numbers(*numbers):
 
 print_numbers(1, 2, 3)
 ```
-<!-- .element: class="fragment" -->
-
-```
-  1
-  2
-  3
-```
-<!-- .element: class="fragment" -->
 
 ---
 
@@ -216,12 +208,6 @@ def sum_two(a, b):
 
 sum_two(b=3, a=2)
 ```
-<!-- .element: class="fragment" -->
-
-```c
-5
-```
-<!-- .element: class="fragment" -->
 
 ---
 
@@ -237,6 +223,115 @@ If you do not know how many keyword arguments that will be passed into your
 function, add two asterisk: ** before the parameter name in the function definition.
 This way the function will receive a dictionary of arguments, 
 and can access the items accordingly.
+
+---
+
+#### Example
+
+```python [1-5|7]
+def sum_three(**kwargs):
+    a = kwargs.get("a")
+    b = kwargs.get("b")
+    c = kwargs.get("c")
+    print(a + b + c)
+
+sum_three(c=3, a=1, b=2)
+```
+
+---
+
+In this example the function receives a **dictionary** of arguments.
+
+Consult the Python documents to understand the `kwargs.get()` function used here.
+
+---
+
+## Default parameter values
+
+---
+
+#### Example
+
+``` python [1-2|4]
+def sum_two(a, b=3):
+    print(a + b)
+
+sum_two(3)
+```
+
+---
+
+### `*args, **kwargs`
+
+---
+
+#### Example
+
+``` python [1-2|4]
+def sum_two_or_more(*args, **kwargs):
+    print(args[0] + args[1] + kwargs.get("c"))
+
+sum_two_or_more(3, 2, c=4)
+```
+
+---
+
+### What doesn't work
+
+``` python [1-2|4]
+def will_break(a, b=3, c):
+    print(a+b+c)
+
+will_break(1, 2, 3)
+```
+
+```python
+SyntaxError: non-default argument follows default argument
+```
+<!-- .element: class="fragment" -->
+
+---
+
+### What doesn't work
+
+``` python [1-2|4]
+def sum_two(a, b):
+    print(a + b)
+
+sum_two(a=2, b)
+```
+
+```python
+SyntaxError: positional argument follows keyword argument
+```
+<!-- .element: class="fragment" -->
+
+---
+
+The Python interpreter first consumes all positional arguments, then any keyword arguments.
+
+---
+
+### Functions can't be empty
+
+---
+
+During development, you might want to write function definitions before fully implementing the code.
+
+```python [1-2|4]
+def dev_function():
+  pass
+
+dev_function()
+```
+<!-- .element: class="fragment" -->
+
+
+---
+
+# Return Values
+
+To let a function return a value, use the return statement
 
 ---
 
