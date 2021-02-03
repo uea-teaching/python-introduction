@@ -168,21 +168,8 @@ TypeError:
 
 ---
 
-### Arbitrary Arguments: `*args`
-
-```python
-def print_numbers(*numbers):
-    for number in numbers:
-        print(number)
-
-print_numbers(1, 2, 3)
-```
-
-```
-  1
-  2
-  3
-```
+### Arbitrary Arguments:
+### `*args`
 
 Note:
 If you do not know how many arguments that will be passed into your function, 
@@ -192,8 +179,28 @@ and can access the items accordingly.
 
 ---
 
-## Keyword Arguments
+#### Example
+
+```python [1-3| 5]
+def print_numbers(*numbers):
+    for number in numbers:
+        print(number)
+
+print_numbers(1, 2, 3)
+```
 <!-- .element: class="fragment" -->
+
+```
+  1
+  2
+  3
+```
+<!-- .element: class="fragment" -->
+
+---
+
+## Keyword Arguments
+
 You can pass arguments with the `key = value` syntax.
 <!-- .element: class="fragment" -->
 This way, the order of the arguments does not matter.
@@ -201,7 +208,7 @@ This way, the order of the arguments does not matter.
 
 ---
 
-## Example
+#### Example
 
 ```python [1-2| 4]
 def sum_two(a, b):
@@ -215,6 +222,21 @@ sum_two(b=3, a=2)
 5
 ```
 <!-- .element: class="fragment" -->
+
+---
+
+Keyword Arguments are often termed `kwargs` in Python documents.
+
+---
+
+### Arbitrary Keyword Arguments
+### `**kwargs`
+
+Note:
+If you do not know how many keyword arguments that will be passed into your 
+function, add two asterisk: ** before the parameter name in the function definition.
+This way the function will receive a dictionary of arguments, 
+and can access the items accordingly.
 
 ---
 
