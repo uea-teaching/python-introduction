@@ -6,3 +6,8 @@
 !examples/
 !examples/*.py
 
+!lectures/
+
+!lectures/functions
+!lectures/functions/*.md
+!lectures/functions/*.html
