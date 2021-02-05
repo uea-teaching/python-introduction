@@ -410,7 +410,7 @@ print(func(5))
 ## Real World Example 
 
 ```python [1 | 2 | 4]
-data = [("x", 1), ("b", 4), ("y", -5)]
+data = [("x", 4), ("y", 1), ("z", -5)]
 sorted_data = sorted(data, key=lambda x: x[1])
 
 print(sorted_data)
