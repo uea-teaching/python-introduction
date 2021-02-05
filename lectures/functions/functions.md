@@ -31,21 +31,21 @@ Functions allow us to organise code in a logical way.
 Functions allow us to avoid repeating code.
 <!-- .element: class="fragment" -->
 
----
+--
 
 <h1 style="color:#ff00ff">DRY</h1>
 
 ## Don't Repeat Yourself
 <!-- .element: class="fragment" -->
 
----
+--
 
 ## Python has around 70 built-in functions
 
 https://docs.python.org/3/library/functions.html
 
 
----
+--
 
 ## You will use this one more than any other
 
@@ -63,7 +63,7 @@ print("hello world!")
 
 # Define a function
 
----
+--
 
 ### A function is defined using the `def` keyword
 
@@ -73,7 +73,7 @@ def my_function():
 ```
 <!-- .element: class="fragment" -->
 
----
+--
 
 #### indentation
 
@@ -97,9 +97,9 @@ my_function()
 ```
 <!-- .element: class="fragment" -->
 
----
+--
 
-```c
+```text
 >>> Hello from a function!
 ```
 
@@ -110,7 +110,7 @@ my_function()
 Parameters are separated by a comma, inside the parentheses of the function definition.
 <!-- .element: class="fragment" -->
 
----
+--
 
 This function has one parameter
 
@@ -126,7 +126,7 @@ times_two(3)
 ```
 <!-- .element: class="fragment" -->
 
----
+--
 
 # Parameters or Arguments
 
@@ -135,7 +135,7 @@ When a function is called, the *arguments* are the
 data you pass into the function's parameters.
 <!-- .element: class="fragment" -->
 
----
+--
 
 ## Number of Arguments
 
@@ -145,7 +145,7 @@ If your function expects 2 arguments, you have to call the function
 with 2 arguments, not more, and not less.
 <!-- .element: class="fragment" -->
 
----
+--
 
 #### Example - wrong number of arguments
 
@@ -155,12 +155,12 @@ def sum_two(a, b):
 ```
 <!-- .element: class="fragment" -->
 
-```c
+```text
 sum_two(3)
 ```
 <!-- .element: class="fragment" -->
 
-```
+```text
 TypeError: 
   sum_two() missing 1 required positional argument: 'b'
 ```
@@ -177,7 +177,7 @@ add a * before the parameter name in the function definition.
 This way the function will receive a tuple of arguments, 
 and can access the items accordingly.
 
----
+--
 
 #### Example - Arbitrary Arguments
 
@@ -198,7 +198,7 @@ You can pass arguments with the `key = value` syntax.
 This way, the order of the arguments does not matter.
 <!-- .element: class="fragment" -->
 
----
+--
 
 #### Example - Keyword Arguments
 
@@ -209,11 +209,11 @@ def sum_two(a, b):
 sum_two(b=3, a=2)
 ```
 
----
+--
 
 Keyword Arguments are often termed `kwargs` in Python documents.
 
----
+--
 
 ### Arbitrary Keyword Arguments
 ### `**kwargs`
@@ -224,7 +224,7 @@ function, add two asterisk: ** before the parameter name in the function definit
 This way the function will receive a dictionary of arguments, 
 and can access the items accordingly.
 
----
+--
 
 #### Example Arbitrary Kwargs
 
@@ -238,7 +238,7 @@ def sum_three(**kwargs):
 sum_three(c=3, a=1, b=2)
 ```
 
----
+--
 
 In this example the function receives a <span style="color:coral">*dictionary*</span> of arguments.
 
@@ -248,7 +248,7 @@ Consult the Python documents to understand the `kwargs.get()` function used here
 
 ## Default parameter values
 
----
+--
 
 #### Example
 
@@ -263,7 +263,11 @@ sum_two(3)
 
 ### `*args, **kwargs`
 
----
+--
+
+we can combine arbitrary `*args` and `**kwargs`
+
+--
 
 #### Example
 
@@ -275,6 +279,10 @@ sum_two_or_more(3, 2, c=4)
 ```
 
 ---
+
+## What doesn't work
+
+--
 
 ### What doesn't work
 
@@ -290,7 +298,7 @@ SyntaxError: non-default argument follows default argument
 ```
 <!-- .element: class="fragment" -->
 
----
+--
 
 ### What doesn't work
 
@@ -306,7 +314,7 @@ SyntaxError: positional argument follows keyword argument
 ```
 <!-- .element: class="fragment" -->
 
----
+--
 
 The Python interpreter first consumes all positional arguments, then any keyword arguments.
 
@@ -314,7 +322,7 @@ The Python interpreter first consumes all positional arguments, then any keyword
 
 ### Functions can't be empty
 
----
+--
 
 During development, you might want to write function definitions before fully implementing the code.
 
@@ -330,11 +338,11 @@ dev_function()
 
 # Return Values
 
----
+--
 
 To let a function return a value, use the `return` statement
 
----
+--
 
 #### Example - return
 
@@ -359,7 +367,7 @@ A small anonymous function
 Any number of arguments, but can only have one expression.
 <!-- .element: class="fragment" -->
 
----
+--
 
 ## Lambda Function Syntax
 
@@ -610,8 +618,66 @@ print(num1(10)(5))
 
 ## Callbacks
 
+A function can accept a function as an argument.
+<!-- .element: class="fragment" -->
+
+--
+
+### Case Study
+
+- You have some buttons in a ui,
+- You want to reuse the button function...
+- but produce different outcomes.
+
+--
+
+#### Define the functions
+
+```python [1-5|7-9]
+def get_square(val):
+    return val ** 2
+
+def get_cube(val):
+    return val ** 3
+
+def clickme(val, func):
+    return func(val)
+```
+
+--
+
+#### Call the functions
+
+```python
+print(clickme(5, get_square))
+```
+
+```text
+25
+```
+<!-- .element: class="fragment" -->
+
+--
+
+#### Call the functions
+
+```python
+print(clickme(5, get_cube))
+```
+
+```text
+125
+```
+<!-- .element: class="fragment" -->
+
 ---
 
 # Questions
 
 ---
+
+Slides and code are available on BlackBoard
+
+I have also made them available on GitHub
+
+https://github.com/uea-teaching/python-introduction
