@@ -147,7 +147,7 @@ with 2 arguments, not more, and not less.
 
 ---
 
-### Example - wrong number of arguments
+#### Example - wrong number of arguments
 
 ```python
 def sum_two(a, b):
@@ -179,7 +179,7 @@ and can access the items accordingly.
 
 ---
 
-#### Example
+#### Example - Arbitrary Arguments
 
 ```python [1-3| 5]
 def print_numbers(*numbers):
@@ -200,7 +200,7 @@ This way, the order of the arguments does not matter.
 
 ---
 
-#### Example
+#### Example - Keyword Arguments
 
 ```python [1-2| 4]
 def sum_two(a, b):
@@ -226,7 +226,7 @@ and can access the items accordingly.
 
 ---
 
-#### Example
+#### Example Arbitrary Kwargs
 
 ```python [1-5|7]
 def sum_three(**kwargs):
@@ -326,7 +326,6 @@ dev_function()
 ```
 <!-- .element: class="fragment" -->
 
-
 ---
 
 # Return Values
@@ -337,7 +336,7 @@ To let a function return a value, use the `return` statement
 
 ---
 
-#### Example
+#### Example - return
 
 ```python [1-2|4|5]
 def return_sum_two(a, b):
@@ -349,11 +348,263 @@ print(result)
 
 ---
 
+# Advanced Functions
+
+---
+
 ## Lambda Functions
+
+A small anonymous function
+<!-- .element: class="fragment" -->
+Any number of arguments, but can only have one expression.
+<!-- .element: class="fragment" -->
+
+---
+
+## Lambda Function Syntax
+
+```python
+lambda arguments : expression
+```
+
+The expression is executed and the result is returned
+
+--
+
+#### Example lambda
+
+```python [1 | 3]
+func = lambda a : a + 10
+
+print(func(5))
+```
+
+--
+
+#### Equivalent to:
+
+```python [1-2 | 4]
+def func(a):
+    return a + 10
+
+print(func(5))
+```
+
+--
+
+## In most cases... 
+
+## you should not use a lambda function! 
+<!-- .element: class="fragment" -->
+
+--
+
+## Real World Example 
+
+```python [1 | 2 | 4]
+data = [("x", 1), ("b", 4), ("y", -5)]
+sorted_data = sorted(data, key=lambda x: x[1])
+
+print(sorted_data)
+```
+
+--
+
+```python
+[('z', -5), ('y', 1), ('x', 4)]
+```
+
+--
+
+This example uses the built in function `sorted`
+
+--
+
+You can print the documentation for a function:
+
+```python
+print(sorted.__doc__)
+```
+
+--
+
+Return a new list containing all items from the iterable in ascending order.
+
+A custom key function can be supplied to customize the sort order, and the
+reverse flag can be set to request the result in descending order.
+
+--
+
+We supply a custom key function using `lambda`.
+
+```python
+sorted_data = sorted(data, key=lambda x: x[1])
+```
+
+--
+
+`x[1]`
+
+The `lambda` function returns the second item in each `tuple`
+
+<span style="color:coral">recall:</span> Python indexes from 0
+<!-- .element: class="fragment" -->
+
+---
+
+## Doc Strings
+
+--
+
+### What is a doc string?
+
+"A docstring is a string literal that occurs as the first statement in a module, function, class, or method definition"
+
+https://www.python.org/dev/peps/pep-0257/
+
+--
+
+### Example
+
+``` python
+def my_function(a, b=5):
+    """Return a plus b.
+    
+    b is optional, and has a default value of 5.
+    """
+    return a + b
+```
+
+We use triple quotes to define the docstring
+<!-- .element: class="fragment" -->
+
+--
+
+
+It is the `__doc__` attribute of the function object.
+
+
+```python
+print(my_function.__doc__)
+```
+<!-- .element: class="fragment" -->
+
+```text
+Return a plus b.
+    
+    b is optional, and has a default value of 5.
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### What doesn't work
+
+```python
+def my_function(a, b=5):
+    # comments do not become docs...
+    pass
+
+print(my_function.__doc__)
+```
+
+```text
+None
+```
+
+--
+
+### Always write a docstring!
+
+Many editors show the docstring on hover 
+<!-- .element: class="fragment" -->
+Really useful as your code gets more complex.
+<!-- .element: class="fragment" -->
 
 ---
 
 ## Nested functions
+
+--
+
+Functions allow us to organise code in a logical way.
+
+--
+
+Nested functions are functions inside an outer function
+
+They can also be called inner functions
+<!-- .element: class="fragment" -->
+
+--
+
+#### Example - inner function
+
+```python [1-5|7]
+def outer():
+  print("I'm the outer function.")
+  def inner():
+    print("And I'm the inner function.")
+  inner()
+
+outer()
+```
+
+```text
+I'm the outer function.
+And I'm the inner function.
+```
+<!-- .element: class="fragment" -->
+
+--
+
+## The inner function can access data within the scope of the outer function
+
+--
+
+```python [1-5|7]
+def outer(s):
+  print("I'm the outer function.")
+  def inner():
+    print("I can see the outer data:", s)
+  inner()
+
+outer("this is the outer data")
+```
+
+```text
+I'm the outer function.
+I can see the outer data: this is the outer data
+```
+<!-- .element: class="fragment" -->
+
+--
+
+Consider carefully if your code design needs nested functions
+
+--
+
+## Closures
+
+- Must have an inner function
+<!-- .element: class="fragment" -->
+- Nested function refers to a value in outer scope
+<!-- .element: class="fragment" -->
+- Outer function returns the inner function
+<!-- .element: class="fragment" -->
+
+--
+
+#### Example - Closure
+
+```python [1-4|6]
+def num1(x):
+  def num2(y):
+    return x + y
+  return num2
+
+print(num1(10)(5))
+```
 
 ---
 
@@ -361,14 +612,6 @@ print(result)
 
 ---
 
-## Recursion
-
----
-
-## Doc Strings
-
----
-
-## Generator Function
+# Questions
 
 ---
