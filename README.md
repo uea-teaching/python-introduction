@@ -21,6 +21,6 @@ covers Functions in Python.
 This course covers the Python programming language. 
 Regardless of the platform you are working on, Python is available.
 
-The only requirement to view the slides is a web browser. 
+The only requirement to view the slides is a web browser - with javascript enabled. 
 For very low bandwidth users, you can view the raw text files for each lecture
-by navigating [here](https://github.com/uea-teaching/python-introduction/tree/gh-pages).
+by navigating [here](https://github.com/uea-teaching/python-introduction/).
