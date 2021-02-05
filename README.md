@@ -12,7 +12,7 @@ I will make the slides available online *and* I will try to keep this material l
 
 ### Functions in Python
 
-The first [lecture](https://uea-teaching.github.io/python-introduction/lectures/lecture1/) 
+This [lecture](https://uea-teaching.github.io/python-introduction/lectures/functions/) 
 covers Functions in Python.
 
 

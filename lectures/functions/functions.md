@@ -359,7 +359,7 @@ print(result)
 
 ## Callbacks
 
---- 
+---
 
 ## Recursion
 
@@ -367,9 +367,8 @@ print(result)
 
 ## Doc Strings
 
-___
+---
 
 ## Generator Function
 
 ---
-
