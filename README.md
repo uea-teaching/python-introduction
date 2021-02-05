@@ -16,7 +16,6 @@ This [lecture](https://uea-teaching.github.io/python-introduction/lectures/funct
 covers Functions in Python.
 
 
-
 ## Requirements
 
 This course covers the Python programming language. 
