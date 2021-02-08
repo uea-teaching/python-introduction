@@ -8,6 +8,12 @@ For very low bandwidth users, you can view the raw text files for each lecture
 by navigating [here](https://github.com/uea-teaching/python-introduction/).
 
 
+## Viewing the slides
+
+Move through the slides with the arrow keys, toggle "o" to get an overview.
+
+
 ## Lectures
 
 [Functions in Python](lectures/functions/)
+[Python Data Structures](lectures/data-structures/)
