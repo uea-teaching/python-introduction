@@ -16,6 +16,14 @@ Room SCI 2.16a
 
 ---
 
+## Contents
+
+- Defining functions
+- Passing and returning values
+- Advanced functions
+
+---
+
 ## What is a function?
 
 A function is a block of code that only runs when it is called.
@@ -54,8 +62,8 @@ print("hello world!")
 ```
 <!-- .element: class="fragment" -->
 
-```bash
->>> hello world!
+```text
+hello world!
 ```
 <!-- .element: class="fragment"-->
 
@@ -100,7 +108,7 @@ my_function()
 --
 
 ```text
->>> Hello from a function!
+Hello from a function!
 ```
 
 ---
@@ -120,9 +128,10 @@ def times_two(a):
 ```
 <!-- .element: class="fragment" -->
 
-```c
+```text
 times_two(3)
->>> 6
+
+6
 ```
 <!-- .element: class="fragment" -->
 
