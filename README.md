@@ -24,3 +24,13 @@ Regardless of the platform you are working on, Python is available.
 The only requirement to view the slides is a web browser - with javascript enabled. 
 For very low bandwidth users, you can view the raw text files for each lecture
 by navigating [here](https://github.com/uea-teaching/python-introduction/).
+
+
+## Viewing offline
+
+If you want to view the slides offline, clone this repository and cd to the lectures directory.
+Run a local http server:
+
+    python -m http.server
+
+The slides can then be viewed at `http://localhost:8000`
