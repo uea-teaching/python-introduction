@@ -67,6 +67,19 @@ hello world!
 ```
 <!-- .element: class="fragment"-->
 
+--
+
+## Help
+
+you can get help on a function using this method:
+
+```python
+help(print)
+```
+
+try it yourself!!
+<!-- .element: class="fragment"-->
+
 ---
 
 # Define a function
