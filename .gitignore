@@ -3,6 +3,9 @@
 !README.md
 !.gitignore
 
+!_layouts/
+!_layouts/*.html
+
 !examples/
 !examples/*.py
 
