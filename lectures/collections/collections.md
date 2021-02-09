@@ -24,20 +24,22 @@ Room SCI 2.16a
 
 ---
 
-# Tuples
+# Tuple
 
-A tuple is a collection which is **ordered** and **immutable**.
+A tuple is a collection which is 
+<span style="color:coral">**ordered**</span> and
+<span style="color:coral">**immutable**</span>.
 <!-- .element: class="fragment" -->
 
 --
 
-![pronouncing](../assets/tuhple-toople.png)
+![pronouncing](../assets/tuhple-toople.jpg)
 
 --
 
 Tuples are used to store multiple items in a single variable.
 
-Tuples are written with round brackets.
+Tuples are written with parentheses (round brackets).
 <!-- .element: class="fragment" -->
 
 --
@@ -45,6 +47,32 @@ Tuples are written with round brackets.
 ```python
 mytuple = ("apple", "banana", "cherry")
 ```
+<!-- .element: class="fragment" -->
+
+--
+
+Tuple items are ordered, unchangeable, and allow duplicate values
+
+--
+
+We access tuple items by indexing
+<!-- .element: class="fragment" -->
+
+```python
+mytuple[0]
+```
+<!-- .element: class="fragment" -->
+
+```text
+apple
+```
+<!-- .element: class="fragment" -->
+
+Note:
+We will dive deeper into indexing with `lists`
+
+--
+
 
 ---
 
