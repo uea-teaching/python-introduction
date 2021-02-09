@@ -11,3 +11,7 @@
 !lectures/functions
 !lectures/functions/*.md
 !lectures/functions/*.html
+
+!lectures/collections
+!lectures/collections/*.md
+!lectures/collections/*.html
