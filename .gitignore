@@ -13,7 +13,7 @@
 !lectures/
 
 !lectures/assets/
-!lectures/assets/*.png
+!lectures/assets/*.jpg
 
 !lectures/functions
 !lectures/functions/*.md
