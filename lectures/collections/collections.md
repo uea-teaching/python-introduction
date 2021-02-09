@@ -23,11 +23,12 @@ Note: Take care with online resources, that they are uo to date and accurate
 
 - Tuples, Lists, Sets and Dictionaries
 - Reading from and writing to collections
+- Comprehensions
 - Methods on collections
 
 ---
 
-# Tuple
+# Tuples
 
 A tuple is a collection which is 
 <span style="color:coral">**ordered**</span> and
@@ -180,6 +181,61 @@ When a function returns multiple values, it returns a tuple.
 ---
 
 # Lists
+
+A list is a collection which is 
+<span style="color:coral">**ordered**</span> and
+<span style="color:coral">**mutable**</span>.
+<!-- .element: class="fragment" -->
+
+--
+
+# Lists
+
+Lists are used to store multiple items in a single variable.
+
+Lists are written with [ square ] brackets .
+<!-- .element: class="fragment" -->
+
+--
+
+```python
+fruits = ["apple", "banana", "cherry"]
+```
+
+--
+
+### lists are ordered
+we access items by indexing
+
+```python
+print(fruits[0])
+```
+<!-- .element: class="fragment" -->
+
+```text
+apple
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### lists *are* mutable 
+### we *can* change items
+
+```python [1 | 3]
+fruits = ["apple", "banana", "cherry"]
+
+fruits[0] = "orange"
+```
+
+```python [1 | 3]
+print(fruits)
+
+['orange', 'banana', 'cherry']
+```
+<!-- .element: class="fragment" -->
+
+--
 
 ---
 
