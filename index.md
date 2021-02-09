@@ -16,5 +16,3 @@ Move through the slides with the arrow keys, toggle "o" to get an overview.
 ## Lectures
 
 * [Functions in Python](lectures/functions/)
-* [Python Data Structures](lectures/data-structures/)
-
