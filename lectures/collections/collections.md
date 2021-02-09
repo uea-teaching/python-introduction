@@ -14,6 +14,9 @@ Room SCI 2.16a
 
 - https://www.w3schools.com/python/
 
+
+Note: Take care with online resources, that they are uo to date and accurate
+
 ---
 
 ## Contents
@@ -45,7 +48,7 @@ Tuples are written with parentheses (round brackets).
 --
 
 ```python
-mytuple = ("apple", "banana", "cherry")
+fruits = ("apple", "banana", "cherry")
 ```
 
 --
@@ -55,10 +58,9 @@ Tuple items are ordered, unchangeable, and allow duplicate values
 --
 
 As tuples are ordered, we access items by indexing
-<!-- .element: class="fragment" -->
 
 ```python
-mytuple[0]
+print(fruits[0])
 ```
 <!-- .element: class="fragment" -->
 
@@ -90,7 +92,7 @@ TypeError: 'tuple' object does not support item assignment
 Tuples can have multiple items with the same value.
 
 ```python
-fruit = ("apple", "banana", "cherry", "apple", "banana")
+fruits = ("apple", "banana", "cherry", "apple", "banana")
 ```
 <!-- .element: class="fragment" -->
 
@@ -131,8 +133,8 @@ Tuple items can be of any data type.
 
 ```python
 fruits = ("apple", "banana", "cherry")
-numbs = (1, 5, 7, 9, 3)
-dares = (True, False, False)
+numbers = (1, 5, 7, 9, 3)
+answers = (True, False, False)
 ```
 
 --
@@ -140,9 +142,48 @@ dares = (True, False, False)
 Tuple items can be of mixed data type.
 
 ```python
-mixed = ("apple", 1, True, False)
+mixed_types = ("apple", 1, True, False)
 ```
 <!-- .element: class="fragment" -->
+
+--
+
+## Tuple unpacking
+
+extract tuple items back into variables
+<!-- .element: class="fragment" -->
+
+--
+
+```python [1 | 2]
+fruits = ("apple", "banana", "cherry")
+a, b, c = fruits
+```
+
+--
+
+```python
+print(a)
+```
+
+```text
+apple
+```
+<!-- .element: class="fragment" -->
+
+--
+
+## FYI
+
+When a function returns multiple values, it returns a tuple. 
+
+---
+
+# Lists
+
+---
+
+# Comprehensions
 
 ---
 
