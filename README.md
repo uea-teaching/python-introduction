@@ -1,19 +1,16 @@
 # Introduction to Programming with Python
 
-This module introduces the programming language Python, for students with little 
-or no previous programming experience.
+This module introduces the programming language Python, 
+for students with little or no previous programming experience.
 
 
 ## Lectures
 
-The material is presented as a series of lectures.
+The material is presented as a series of lectures and some code examples.
+
+The online lectures are available [here](https://uea-teaching.github.io/python-introduction/).
+
 I will make the slides available online *and* I will try to keep this material low-bandwidth.
-
-
-### Functions in Python
-
-This [lecture](https://uea-teaching.github.io/python-introduction/lectures/functions/) 
-covers Functions in Python.
 
 
 ## Requirements
@@ -28,7 +25,9 @@ by navigating [here](https://github.com/uea-teaching/python-introduction/).
 
 ## Viewing offline
 
-If you want to view the slides offline, clone this repository and cd to the lectures directory.
+If you want to view the slides offline, 
+clone this repository and cd to the lectures directory.
+
 Run a local http server:
 
     python -m http.server
