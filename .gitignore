@@ -5,11 +5,15 @@
 
 !_layouts/
 !_layouts/*.html
+!index.md
 
 !examples/
 !examples/*.py
 
 !lectures/
+
+!lectures/assets/
+!lectures/assets/*.png
 
 !lectures/functions
 !lectures/functions/*.md
