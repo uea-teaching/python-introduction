@@ -143,7 +143,7 @@ answers = (True, False, False)
 Tuple items can be of mixed data type.
 
 ```python
-mixed_types = ("apple", 1, True, False)
+mixed_types = ("apple", 1, True)
 ```
 <!-- .element: class="fragment" -->
 
@@ -189,8 +189,6 @@ A list is a collection which is
 
 --
 
-# Lists
-
 Lists are used to store multiple items in a single variable.
 
 Lists are written with [ square ] brackets .
@@ -205,6 +203,7 @@ fruits = ["apple", "banana", "cherry"]
 --
 
 ### lists are ordered
+
 we access items by indexing
 
 ```python
@@ -236,6 +235,164 @@ print(fruits)
 <!-- .element: class="fragment" -->
 
 --
+
+## Data types
+
+List items can be of any data type.
+<!-- .element: class="fragment" -->
+
+--
+
+```python
+fruits = ["apple", "banana", "cherry"]
+numbers = [1, 5, 7, 9, 3]
+answers = [True, False, False]
+```
+
+--
+
+List items can be of mixed data type.
+
+```python
+mixed_types = ["apple", 1, True]
+```
+<!-- .element: class="fragment" -->
+
+---
+
+# Indexing
+
+--
+
+## Reminder
+
+```python
+fruits = ["apple", "banana", "cherry"]
+print(fruits[1])
+```
+
+```text
+banana
+```
+<!-- .element: class="fragment" -->
+
+Note: Why is it banana?
+
+--
+
+### Errors
+
+```python
+letters = ["a", "b", "c"]
+print(letters[3])
+```
+
+```text
+IndexError: list index out of range
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### Negative Indexing
+
+We can index from the end of the list!
+
+-1 is the last item, -2 is next to last item...
+<!-- .element: class="fragment" -->
+
+--
+
+```python
+fruits = ["apple", "banana", "cherry"]
+print(fruits[-1])
+```
+
+```text
+cherry
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### Range of Indices
+
+The `:` operator allows a `range` of indices.
+
+Note: You can specify a range of indexes by specifying 
+where to start and where to end the range.
+
+--
+
+```python
+letters = ["a", "b", "c", "d", "e", "f", "g"]
+print(letters[2:5])
+```
+
+```text
+['c', 'd', 'e']
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### defaults
+
+- default start is 0
+- default end is `len()` of collection
+- default interval (step) is 1
+- range is start to end -1
+
+--
+
+#### example 
+
+```python
+letters = ["a", "b", "c"]
+print(letters[:2])
+```
+
+```text
+['a', 'b']
+```
+<!-- .element: class="fragment" -->
+
+--
+
+#### example 
+
+```python
+letters = ["a", "b", "c"]
+print(letters[1:])
+```
+
+```text
+['b', 'c']
+```
+<!-- .element: class="fragment" -->
+
+--
+
+#### example 
+
+```python
+letters = ["a", "b", "c"]
+print(letters[::-1])
+```
+
+```text
+['c', 'b', 'a']
+```
+<!-- .element: class="fragment" -->
+
+---
+
+# Iterables
+
+Python collections are <span style="color:coral">`iterable`</span> 
+
+We can use a <span style="color:coral">`for`</span> loop
+<!-- .element: class="fragment" -->
 
 ---
 
