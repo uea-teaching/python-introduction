@@ -391,12 +391,120 @@ print(letters[::-1])
 
 Python collections are <span style="color:coral">`iterable`</span> 
 
-We can use a <span style="color:coral">`for`</span> loop
+We can use a <span style="color:coral">`for`</span> loop to access items
 <!-- .element: class="fragment" -->
+
+--
+
+```python [1 | 3-4]
+letters = ["a", "b", "c", "d", "e", "f", "g"]
+
+for letter in letters:
+    print(letter, end=" ")
+```
+
+```text
+a b c d e f g
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### enumerate
+
+```python [1-2 | 4-5]
+letters = ["a", "b", "c", "d"]
+fruits = ["apple", "banana", "cherry", "orange"]
+
+for i, letter in enumerate(letters):
+    print(letter, fruits[i], end=" ")
+```
+
+```text
+a apple b banana c cherry d orange
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### zip
+
+```python [1-2 | 4-5]
+letters = ["a", "b", "c", "d"]
+fruits = ["apple", "banana", "cherry", "orange"]
+
+for letter, fruit in zip(letters, fruits):
+    print(letter, fruit, end=" ")
+```
+
+```text
+a apple b banana c cherry d orange
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### avoid
+
+```python
+for i in range(len(fruits)):
+    ...
+```
 
 ---
 
-# Comprehensions
+# List Comprehensions
+
+Comprehensions are a 'pythonic' way of composing a collection.
+<!-- .element: class="fragment" -->
+
+Note: Usually, we want to perform some action on each item of an iterable, 
+and store the result as one variable.
+
+--
+
+### Example - list comprehensions
+
+```python
+squared = [x**2 for x in range(1, 5)]
+print(squared)
+```
+
+```text
+[1, 4, 9, 16]
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### Example - conditional
+
+```python
+squared_even = [x**2 for x in range(1, 9) if x % 2 == 0]
+print(squared_even)
+```
+
+```text
+[4, 16, 32, 64]
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### Example - nested
+
+```python [1-3 | 5]
+numbers = [1, 2]
+letters = ["a", "b"]
+nested = [(i, j) for i in numbers for j in letters]
+
+print(nested)
+```
+
+```text
+[(1, 'a'), (1, 'b'), (2, 'a'), (2, 'b')]
+```
+<!-- .element: class="fragment" -->
 
 ---
 
