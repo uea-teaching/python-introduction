@@ -43,7 +43,9 @@ A tuple is a collection which is
 
 Tuples are used to store multiple items in a single variable.
 
-Tuples are written with parentheses (round brackets).
+Tuples are written with parentheses 
+<span style="color:magenta">(</span>round 
+brackets<span style="color:magenta">)</span>.
 <!-- .element: class="fragment" -->
 
 --
@@ -156,14 +158,10 @@ extract tuple items back into variables
 
 --
 
-```python [1 | 2]
+```python [1 | 2 | 4]
 fruits = ("apple", "banana", "cherry")
 a, b, c = fruits
-```
 
---
-
-```python
 print(a)
 ```
 
@@ -191,7 +189,9 @@ A list is a collection which is
 
 Lists are used to store multiple items in a single variable.
 
-Lists are written with [ square ] brackets .
+Lists are written with 
+<span style="color:magenta">[</span> square
+<span style="color:magenta">]</span> brackets.
 <!-- .element: class="fragment" -->
 
 --
