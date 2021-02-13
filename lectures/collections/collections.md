@@ -506,6 +506,8 @@ print(nested)
 ```
 <!-- .element: class="fragment" -->
 
+---
+
 ## List Functions
 
 --
@@ -927,6 +929,23 @@ print(a)
 
 ```text
 {2: 4, 4: 16, 6: 36}
+```
+<!-- .element: class="fragment" -->
+
+---
+
+## FYI
+
+There is no comprehension for tuple
+
+```python
+a = (x**2 for x in [1, 2, 3])
+
+print(type(a))
+```
+
+```text
+generator
 ```
 <!-- .element: class="fragment" -->
 
