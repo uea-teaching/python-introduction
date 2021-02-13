@@ -641,8 +641,142 @@ print(fruits)
 The `sort()` method works in place - unlike the `sorted()` function
 we looked at last week.
 
+---
+
+# Sets
+
+A `set` is a collection which is 
+<span style="color:coral">**unordered**</span> and has
+<span style="color:coral">**immutable**</span> items.
+<!-- .element: class="fragment" -->
+
 --
 
+Sets are used to store multiple items in a single variable.
+
+Sets are written with braces 
+<span style="color:magenta">{</span>curly 
+brackets<span style="color:magenta">}</span>.
+<!-- .element: class="fragment" -->
+
+--
+
+```python
+fruits = {"apple", "banana", "cherry"}
+```
+
+--
+
+- Set items are unordered, unchangeable. 
+- Sets **do not** allow duplicate values.
+- Sets **can** be modified as a whole.
+
+--
+
+### Items must be immutable
+
+```python
+fruits = {"apple", "banana", ["mango", "pineapple"]}
+```
+
+```text
+TypeError: unhashable type: 'list'
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### Access Items
+
+No indexing, but you can use a `for` loop, or the `in` keyword.
+
+```python
+fruits = {"apple", "banana", "cherry"}
+print("cherry" in fruits)
+```
+
+```text
+True
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### Add items
+
+```python
+fruits = {"apple", "banana", "cherry"}
+fruits.add("orange")
+
+print(fruits)
+```
+
+```text
+{'cherry', 'banana', 'apple', 'orange'}
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### Add any iterable
+
+```python
+fruits = {"apple", "banana", "cherry"}
+tropical = ["pineapple", "mango"]
+fruits.update(tropical)
+
+print(fruits)
+```
+
+```text
+{'mango', 'pineapple', 'banana', 'cherry', 'apple'}
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### Set operations
+
+```python
+fruits = {"apple", "banana", "cherry"}
+tropical = {"pineapple", "mango"}
+
+print(fruits.union(tropical))
+```
+
+```text
+{'mango', 'pineapple', 'banana', 'cherry', 'apple'}
+```
+<!-- .element: class="fragment" -->
+
+```python
+print(fruits | tropical)
+```
+<!-- .element: class="fragment" -->
+
+```text
+{'mango', 'pineapple', 'banana', 'cherry', 'apple'}
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### Consult the documents for full details
+
+---
+
+# Dictionaries
+
+---
+
+# Alternatively
+
+All the collections can be constructed from built in methods.
+
+- `tuple()`
+- `list()`
+- `set()`
+- `dict()`
 
 ---
 

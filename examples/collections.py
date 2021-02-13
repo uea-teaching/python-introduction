@@ -139,3 +139,39 @@ fruits.sort()
 
 print(fruits)
 # %%
+
+fruits = {"apple", "banana", "cherry", "cherry"}
+print(fruits)
+
+# %%
+
+fruits = {"apple", "banana", ["mango", "pineapple"]}
+print(fruits)
+
+# %%
+
+fruits = {"apple", "banana", "cherry"}
+print("cherry" in fruits)
+# %%
+
+fruits = {"apple", "banana", "cherry"}
+fruits.add("orange")
+
+print(fruits)
+
+
+# %%
+
+fruits = {"apple", "banana", "cherry"}
+tropical = ["pineapple", "mango"]
+fruits.update(tropical)
+
+print(fruits)
+
+# %%
+
+fruits = {"apple", "banana", "cherry"}
+tropical = {"pineapple", "mango"}
+
+print(fruits.union(tropical))
+print(fruits | tropical)
