@@ -43,7 +43,9 @@ A tuple is a collection which is
 
 Tuples are used to store multiple items in a single variable.
 
-Tuples are written with parentheses (round brackets).
+Tuples are written with parentheses 
+<span style="color:magenta">(</span>round 
+brackets<span style="color:magenta">)</span>.
 <!-- .element: class="fragment" -->
 
 --
@@ -143,7 +145,7 @@ answers = (True, False, False)
 Tuple items can be of mixed data type.
 
 ```python
-mixed_types = ("apple", 1, True, False)
+mixed_types = ("apple", 1, True)
 ```
 <!-- .element: class="fragment" -->
 
@@ -156,14 +158,10 @@ extract tuple items back into variables
 
 --
 
-```python [1 | 2]
+```python [1 | 2 | 4]
 fruits = ("apple", "banana", "cherry")
 a, b, c = fruits
-```
 
---
-
-```python
 print(a)
 ```
 
@@ -189,11 +187,11 @@ A list is a collection which is
 
 --
 
-# Lists
-
 Lists are used to store multiple items in a single variable.
 
-Lists are written with [ square ] brackets .
+Lists are written with 
+<span style="color:magenta">[</span> square
+<span style="color:magenta">]</span> brackets.
 <!-- .element: class="fragment" -->
 
 --
@@ -205,6 +203,7 @@ fruits = ["apple", "banana", "cherry"]
 --
 
 ### lists are ordered
+
 we access items by indexing
 
 ```python
@@ -237,9 +236,547 @@ print(fruits)
 
 --
 
+## Data types
+
+List items can be of any data type.
+<!-- .element: class="fragment" -->
+
+--
+
+```python
+fruits = ["apple", "banana", "cherry"]
+numbers = [1, 5, 7, 9, 3]
+answers = [True, False, False]
+```
+
+--
+
+List items can be of mixed data type.
+
+```python
+mixed_types = ["apple", 1, True]
+```
+<!-- .element: class="fragment" -->
+
 ---
 
-# Comprehensions
+# Indexing
+
+--
+
+## Reminder
+
+```python
+fruits = ["apple", "banana", "cherry"]
+print(fruits[1])
+```
+
+```text
+banana
+```
+<!-- .element: class="fragment" -->
+
+Note: Why is it banana?
+
+--
+
+### Errors
+
+```python
+letters = ["a", "b", "c"]
+print(letters[3])
+```
+
+```text
+IndexError: list index out of range
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### Negative Indexing
+
+We can index from the end of the list!
+
+-1 is the last item, -2 is next to last item...
+<!-- .element: class="fragment" -->
+
+--
+
+```python
+fruits = ["apple", "banana", "cherry"]
+print(fruits[-1])
+```
+
+```text
+cherry
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### Range of Indices
+
+The `:` operator allows a `range` of indices.
+
+Note: You can specify a range of indexes by specifying 
+where to start and where to end the range.
+
+--
+
+```python
+letters = ["a", "b", "c", "d", "e", "f", "g"]
+print(letters[2:5])
+```
+
+```text
+['c', 'd', 'e']
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### defaults
+
+- default start is 0
+- default end is `len()` of collection
+- default interval (step) is 1
+- range is start to end -1
+
+--
+
+#### example 
+
+```python
+letters = ["a", "b", "c"]
+print(letters[:2])
+```
+
+```text
+['a', 'b']
+```
+<!-- .element: class="fragment" -->
+
+--
+
+#### example 
+
+```python
+letters = ["a", "b", "c"]
+print(letters[1:])
+```
+
+```text
+['b', 'c']
+```
+<!-- .element: class="fragment" -->
+
+--
+
+#### example 
+
+```python
+letters = ["a", "b", "c"]
+print(letters[::-1])
+```
+
+```text
+['c', 'b', 'a']
+```
+<!-- .element: class="fragment" -->
+
+---
+
+# Iterables
+
+Python collections are <span style="color:coral">`iterable`</span> 
+
+We can use a <span style="color:coral">`for`</span> loop to access items
+<!-- .element: class="fragment" -->
+
+--
+
+```python [1 | 3-4]
+letters = ["a", "b", "c", "d", "e", "f", "g"]
+
+for letter in letters:
+    print(letter, end=" ")
+```
+
+```text
+a b c d e f g
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### enumerate
+
+```python [1-2 | 4-5]
+letters = ["a", "b", "c", "d"]
+fruits = ["apple", "banana", "cherry", "orange"]
+
+for i, letter in enumerate(letters):
+    print(letter, fruits[i], end=" ")
+```
+
+```text
+a apple b banana c cherry d orange
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### zip
+
+```python [1-2 | 4-5]
+letters = ["a", "b", "c", "d"]
+fruits = ["apple", "banana", "cherry", "orange"]
+
+for letter, fruit in zip(letters, fruits):
+    print(letter, fruit, end=" ")
+```
+
+```text
+a apple b banana c cherry d orange
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### avoid
+
+```python
+for i in range(len(fruits)):
+    ...
+```
+
+---
+
+# List Comprehensions
+
+Comprehensions are a 'pythonic' way of composing a collection.
+<!-- .element: class="fragment" -->
+
+Note: Usually, we want to perform some action on each item of an iterable, 
+and store the result as one variable.
+
+--
+
+### Example - list comprehensions
+
+```python
+squared = [x**2 for x in range(1, 5)]
+print(squared)
+```
+
+```text
+[1, 4, 9, 16]
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### Example - conditional
+
+```python
+squared_even = [x**2 for x in range(1, 9) if x % 2 == 0]
+print(squared_even)
+```
+
+```text
+[4, 16, 32, 64]
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### Example - nested
+
+```python [1-3 | 5]
+numbers = [1, 2]
+letters = ["a", "b"]
+nested = [(i, j) for i in numbers for j in letters]
+
+print(nested)
+```
+
+```text
+[(1, 'a'), (1, 'b'), (2, 'a'), (2, 'b')]
+```
+<!-- .element: class="fragment" -->
+
+## List Functions
+
+--
+
+To add an item to the end of the list, use the `append()` method
+
+
+```python [1-2 | 4]
+fruits = ["apple", "banana", "cherry"]
+fruits.append("orange")
+
+print(fruits)
+```
+
+```text
+['apple', 'banana', 'cherry', 'orange']
+```
+<!-- .element: class="fragment" -->
+
+--
+
+To insert a list item at a specified index, use the `insert()` method
+
+
+```python [1-2 | 4]
+fruits = ["apple", "banana", "cherry"]
+fruits.insert(1, "orange")
+
+print(fruits)
+```
+
+```text
+['apple', 'orange', 'banana', 'cherry']
+```
+<!-- .element: class="fragment" -->
+
+--
+
+To append elements from *another* list to the current list, 
+use the `extend()` method
+
+
+```python [1-3 | 5]
+fruits = ["apple", "banana", "cherry"]
+tropical = ["mango", "pineapple", "papaya"]
+fruits.extend(tropical)
+
+print(fruits)
+```
+
+```text
+['apple', 'banana', 'cherry', 'mango', 'pineapple', 'papaya']
+```
+<!-- .element: class="fragment" -->
+
+--
+
+We can also use the `+` operator to join lists
+
+```python [1-3 | 5]
+fruits = ["apple", "banana", "cherry"]
+tropical = ["mango", "pineapple", "papaya"]
+tutti_frutti = fruits + tropical
+
+print(tutti_frutti)
+```
+
+```text
+['apple', 'banana', 'cherry', 'mango', 'pineapple', 'papaya']
+```
+<!-- .element: class="fragment" -->
+
+--
+
+The `pop()` method removes the specified index
+
+
+```python [1-2 | 4]
+fruits = ["apple", "banana", "cherry"]
+fruits.pop(1)
+
+print(fruits)
+```
+
+```text
+['apple', 'cherry']
+```
+<!-- .element: class="fragment" -->
+
+--
+
+If you do not specify the index, the `pop()` method removes the last item.
+
+```python [1-2 | 4]
+fruits = ["apple", "banana", "cherry"]
+fruits.pop()
+
+print(fruits)
+```
+
+```text
+['apple', 'banana']
+```
+<!-- .element: class="fragment" -->
+
+--
+
+## FYI
+
+Using the `append()` and `pop()` methods, Python lists work as a
+<span style="color:coral">stack</span> data structure.
+
+--
+
+List objects have a `sort()` method.
+
+```python [1-2 | 4]
+fruits = ["orange", "mango", "kiwi", "pineapple", "banana"]
+fruits.sort()
+
+print(fruits)
+```
+
+```text
+['banana', 'kiwi', 'mango', 'orange', 'pineapple']
+```
+<!-- .element: class="fragment" -->
+
+--
+
+## FYI
+
+The `sort()` method works in place - unlike the `sorted()` function
+we looked at last week.
+
+---
+
+# Sets
+
+A `set` is a collection which is 
+<span style="color:coral">**unordered**</span> and has
+<span style="color:coral">**immutable**</span> items.
+<!-- .element: class="fragment" -->
+
+--
+
+Sets are used to store multiple items in a single variable.
+
+Sets are written with braces 
+<span style="color:magenta">{</span>curly 
+brackets<span style="color:magenta">}</span>.
+<!-- .element: class="fragment" -->
+
+--
+
+```python
+fruits = {"apple", "banana", "cherry"}
+```
+
+--
+
+- Set items are unordered, unchangeable. 
+- Sets **do not** allow duplicate values.
+- Sets **can** be modified as a whole.
+
+--
+
+### Items must be immutable
+
+```python
+fruits = {"apple", "banana", ["mango", "pineapple"]}
+```
+
+```text
+TypeError: unhashable type: 'list'
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### Access Items
+
+No indexing, but you can use a `for` loop, or the `in` keyword.
+
+```python
+fruits = {"apple", "banana", "cherry"}
+print("cherry" in fruits)
+```
+
+```text
+True
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### Add items
+
+```python
+fruits = {"apple", "banana", "cherry"}
+fruits.add("orange")
+
+print(fruits)
+```
+
+```text
+{'cherry', 'banana', 'apple', 'orange'}
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### Add any iterable
+
+```python
+fruits = {"apple", "banana", "cherry"}
+tropical = ["pineapple", "mango"]
+fruits.update(tropical)
+
+print(fruits)
+```
+
+```text
+{'mango', 'pineapple', 'banana', 'cherry', 'apple'}
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### Set operations
+
+```python
+fruits = {"apple", "banana", "cherry"}
+tropical = {"pineapple", "mango"}
+
+print(fruits.union(tropical))
+```
+
+```text
+{'mango', 'pineapple', 'banana', 'cherry', 'apple'}
+```
+<!-- .element: class="fragment" -->
+
+```python
+print(fruits | tropical)
+```
+<!-- .element: class="fragment" -->
+
+```text
+{'mango', 'pineapple', 'banana', 'cherry', 'apple'}
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### Consult the documents for full details
+
+---
+
+# Dictionaries
+
+---
+
+# Alternatively
+
+All the collections can be constructed from built in methods.
+
+- `tuple()`
+- `list()`
+- `set()`
+- `dict()`
 
 ---
 
@@ -247,7 +784,7 @@ print(fruits)
 
 ---
 
-Slides and code are available on BlackBoard
+Slides and code are available on Teams
 
 I have also made them available on GitHub
 
