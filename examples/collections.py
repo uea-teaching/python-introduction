@@ -87,3 +87,55 @@ print(nested)
 # [(1, 'a'), (1, 'b'), (2, 'a'), (2, 'b')]
 
 # %%
+
+fruits = ["apple", "banana", "cherry"]
+fruits.append("orange")
+
+print(fruits)
+
+# %%
+
+fruits
+thislist = ["apple", "banana", "cherry"]
+thislist.insert(1, "orange")
+
+print(thislist)
+
+# %%
+
+fruits = ["apple", "banana", "cherry"]
+tropical = ["mango", "pineapple", "papaya"]
+fruits.extend(tropical)
+
+print(fruits)
+
+# %%
+
+fruits = ["apple", "banana", "cherry"]
+tropical = ["mango", "pineapple", "papaya"]
+tutti_frutti = fruits + tropical
+
+print(tutti_frutti)
+
+# %%
+
+fruits = ["apple", "banana", "cherry"]
+fruits.pop(1)
+print(fruits)
+
+
+# %%
+
+fruits = ["apple", "banana", "cherry"]
+fruits.pop()
+
+print(fruits)
+# %%
+
+# %%
+
+fruits = ["orange", "mango", "kiwi", "pineapple", "banana"]
+fruits.sort()
+
+print(fruits)
+# %%

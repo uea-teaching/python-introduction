@@ -506,13 +506,151 @@ print(nested)
 ```
 <!-- .element: class="fragment" -->
 
+## List Functions
+
+--
+
+To add an item to the end of the list, use the `append()` method
+
+
+```python [1-2 | 4]
+fruits = ["apple", "banana", "cherry"]
+fruits.append("orange")
+
+print(fruits)
+```
+
+```text
+['apple', 'banana', 'cherry', 'orange']
+```
+<!-- .element: class="fragment" -->
+
+--
+
+To insert a list item at a specified index, use the `insert()` method
+
+
+```python [1-2 | 4]
+fruits = ["apple", "banana", "cherry"]
+fruits.insert(1, "orange")
+
+print(fruits)
+```
+
+```text
+['apple', 'orange', 'banana', 'cherry']
+```
+<!-- .element: class="fragment" -->
+
+--
+
+To append elements from *another* list to the current list, 
+use the `extend()` method
+
+
+```python [1-3 | 5]
+fruits = ["apple", "banana", "cherry"]
+tropical = ["mango", "pineapple", "papaya"]
+fruits.extend(tropical)
+
+print(fruits)
+```
+
+```text
+['apple', 'banana', 'cherry', 'mango', 'pineapple', 'papaya']
+```
+<!-- .element: class="fragment" -->
+
+--
+
+We can also use the `+` operator to join lists
+
+```python [1-3 | 5]
+fruits = ["apple", "banana", "cherry"]
+tropical = ["mango", "pineapple", "papaya"]
+tutti_frutti = fruits + tropical
+
+print(tutti_frutti)
+```
+
+```text
+['apple', 'banana', 'cherry', 'mango', 'pineapple', 'papaya']
+```
+<!-- .element: class="fragment" -->
+
+--
+
+The `pop()` method removes the specified index
+
+
+```python [1-2 | 4]
+fruits = ["apple", "banana", "cherry"]
+fruits.pop(1)
+
+print(fruits)
+```
+
+```text
+['apple', 'cherry']
+```
+<!-- .element: class="fragment" -->
+
+--
+
+If you do not specify the index, the `pop()` method removes the last item.
+
+```python [1-2 | 4]
+fruits = ["apple", "banana", "cherry"]
+fruits.pop()
+
+print(fruits)
+```
+
+```text
+['apple', 'banana']
+```
+<!-- .element: class="fragment" -->
+
+--
+
+## FYI
+
+Using the `append()` and `pop()` methods, Python lists work as a
+<span style="color:coral">stack</span> data structure.
+
+--
+
+List objects have a `sort()` method.
+
+```python [1-2 | 4]
+fruits = ["orange", "mango", "kiwi", "pineapple", "banana"]
+fruits.sort()
+
+print(fruits)
+```
+
+```text
+['banana', 'kiwi', 'mango', 'orange', 'pineapple']
+```
+<!-- .element: class="fragment" -->
+
+--
+
+## FYI
+
+The `sort()` method works in place - unlike the `sorted()` function
+we looked at last week.
+
+--
+
+
 ---
 
 # Questions
 
 ---
 
-Slides and code are available on BlackBoard
+Slides and code are available on Teams
 
 I have also made them available on GitHub
 
