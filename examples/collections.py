@@ -221,3 +221,12 @@ for key, value in car.items():
     print(key, value, end=" ")
     
 # %%
+
+a = (x**2 for x in [1, 2, 3])
+
+print(type(a))
+
+# %%
+
+
+# %%
