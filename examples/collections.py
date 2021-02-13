@@ -175,3 +175,49 @@ tropical = {"pineapple", "mango"}
 
 print(fruits.union(tropical))
 print(fruits | tropical)
+
+# %%
+
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+print(car)
+
+# %%
+
+print(car["brand"])
+
+# %%
+
+print(car.get("colour"))
+
+# %%
+
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964,
+  "year": 2020
+}
+print(car)
+
+
+# %%
+
+for key in car:
+    print(key, end=" ")
+
+# %%
+
+for value in car.values():
+    print(value, end=" ")
+
+# %%
+
+for key, value in car.items():
+    print(key, value, end=" ")
+    
+# %%

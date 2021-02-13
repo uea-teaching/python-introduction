@@ -60,7 +60,7 @@ Tuple items are ordered, unchangeable, and allow duplicate values
 
 --
 
-As tuples are ordered, we access items by indexing
+We access items by indexing
 
 ```python
 print(fruits[0])
@@ -761,11 +761,174 @@ print(fruits | tropical)
 
 --
 
-### Consult the documents for full details
+### Consult the documents for full details of available methods
+
+--
+
+### Set Comprehensions
+
+Set comprehensions are also supported.
+
+```python
+a = {x for x in 'abracadabra' if x not in 'abc'}
+print(a)
+```
+
+```text
+{'r', 'd'}
+```
+<!-- .element: class="fragment" -->
 
 ---
 
 # Dictionaries
+
+A `dictionary` is a collection which is 
+<span style="color:coral">**ordered**</span>, is
+<span style="color:coral">**mutable**</span> and
+does not allow duplicate keys.
+<!-- .element: class="fragment" -->
+
+"ordered" means the items order is guaranteed, it does **not** mean we access items with indexing
+<!-- .element: class="fragment" -->
+
+--
+
+Dictionaries are used to store data values in key:value pairs in a single variable.
+
+Dictionaries are written with braces 
+<span style="color:magenta">{</span>curly 
+brackets<span style="color:magenta">}</span>.
+<!-- .element: class="fragment" -->
+
+--
+
+```python
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+```
+
+--
+
+Dictionaries **do not** allow duplicate keys.
+
+```python
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964,
+  "year": 2020
+}
+
+print(car)
+```
+
+```text
+{'brand': 'Ford', 'model': 'Mustang', 'year': 2020}
+```
+<!-- .element: class="fragment" -->
+
+--
+
+Dictionary values can be referred to using the key.
+
+```python
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+print(car["brand"])
+```
+
+```text
+Ford
+```
+<!-- .element: class="fragment" -->
+
+--
+
+We can access values with the `get()` function, which can return a default.
+
+```python
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+print(car.get("colour", "black"))
+```
+
+```text
+black
+```
+<!-- .element: class="fragment" -->
+
+Without a default value, `get()` returns `None`.
+<!-- .element: class="fragment" -->
+
+--
+
+Dictionaries are `iterable`
+
+```python
+for key in car:
+    print(key, end=" ")
+```
+
+```text
+brand model year
+```
+<!-- .element: class="fragment" -->
+
+--
+
+Iterate over values with the `values()` method
+
+```python
+for value in car.values():
+    print(value, end=" ")
+```
+
+```text
+Ford Mustang 2020 
+```
+<!-- .element: class="fragment" -->
+
+--
+
+Iterate over key and value with `items()` method
+
+```python
+for key, value in car.items():
+    print(key, value, end=" ")
+```
+
+```text
+brand Ford model Mustang year 2020 
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### Dictionary Comprehensions
+
+Dictionary comprehensions are also supported.
+
+```python
+a = {x: x**2 for x in (2, 4, 6)}
+print(a)
+```
+
+```text
+{2: 4, 4: 16, 6: 36}
+```
+<!-- .element: class="fragment" -->
 
 ---
 
@@ -773,10 +936,7 @@ print(fruits | tropical)
 
 All the collections can be constructed from built in methods.
 
-- `tuple()`
-- `list()`
-- `set()`
-- `dict()`
+ `tuple()` `list()` `set()` `dict()`
 
 ---
 
