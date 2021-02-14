@@ -620,6 +620,8 @@ print(fruits)
 Using the `append()` and `pop()` methods, Python lists work as a
 <span style="color:coral">stack</span> data structure.
 
+Note: Last In First Out
+
 --
 
 List objects have a `sort()` method.
