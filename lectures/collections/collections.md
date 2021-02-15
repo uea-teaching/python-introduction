@@ -314,7 +314,7 @@ cherry
 
 ### Range of Indices
 
-The `:` operator allows a `range` of indices.
+The `:` operator allows a range of indices.
 
 Note: You can specify a range of indexes by specifying 
 where to start and where to end the range.
@@ -503,6 +503,22 @@ print(nested)
 ```
 <!-- .element: class="fragment" -->
 
+--
+
+## Equivalent
+
+```python
+numbers = [1, 2]
+letters = ["a", "b"]
+nested = []
+
+for i in numbers:
+    for j in letters:
+        nested.append((i, j)) 
+
+print(nested)
+```
+
 ---
 
 ## List Functions
@@ -617,7 +633,9 @@ print(fruits)
 Using the `append()` and `pop()` methods, Python lists work as a
 <span id="bright">stack</span> data structure.
 
-Note: Last In First Out
+Last In First Out <span id="bright"> LIFO </span>
+<!-- .element: class="fragment" -->
+
 
 --
 
@@ -646,7 +664,7 @@ we looked at last week.
 
 # Sets
 
-A `set` is a collection which is 
+A set is a collection which is 
 <span id="bright">**unordered**</span> and has
 <span id="bright">**immutable**</span> items.
 <!-- .element: class="fragment" -->

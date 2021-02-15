@@ -88,6 +88,19 @@ print(nested)
 
 # %%
 
+numbers = [1, 2]
+letters = ["a", "b"]
+nested = []
+
+for i in numbers:
+    for j in letters:
+        nested.append((i, j)) 
+
+print(nested)
+
+
+# %%
+
 fruits = ["apple", "banana", "cherry"]
 fruits.append("orange")
 
