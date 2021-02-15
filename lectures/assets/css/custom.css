@@ -1,21 +1,22 @@
-#bright {
+.bright {
     color: deeppink;
-  }
-
-#left {
-    text-align: center;
-    z-index:-10;
-    width:48%;
-}
-
-#right {
-    float: right;
-    z-index:-10;
-    width:48%;
 }
 
 code {
     color: coral;
-    font:"Monaco", "Consolas", "Andale Mono","DejaVu Sans Mono", "Courier New", monospace;
+    font: "Monaco", "Consolas", "Andale Mono", "DejaVu Sans Mono", "Courier New", monospace;
     font-size: 0.95em;
+}
+
+.twocolumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.twocolumnleft {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    text-align: left;
 }
