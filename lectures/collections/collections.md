@@ -78,7 +78,7 @@ We will dive deeper into indexing with `lists`
 
 Because tuples are immutable, we can't change items.
 
-```python [1 | 3]
+```python
 fruits = ("apple", "banana", "cherry")
 
 fruits[0] = "orange"
@@ -157,7 +157,7 @@ extract tuple items back into variables
 
 --
 
-```python [1 | 2 | 4]
+```python
 fruits = ("apple", "banana", "cherry")
 a, b, c = fruits
 
@@ -219,15 +219,14 @@ apple
 ### lists *are* mutable 
 ### we *can* change items
 
-```python [1 | 3]
+```python
 fruits = ["apple", "banana", "cherry"]
-
 fruits[0] = "orange"
+
+print(fruits)
 ```
 
-```python [1 | 3]
-print(fruits)
-
+```text
 ['orange', 'banana', 'cherry']
 ```
 <!-- .element: class="fragment" -->
@@ -394,7 +393,7 @@ We can use a <span id="bright">`for`</span> loop to access items
 
 --
 
-```python [1 | 3-4]
+```python
 letters = ["a", "b", "c", "d", "e", "f", "g"]
 
 for letter in letters:
@@ -410,7 +409,7 @@ a b c d e f g
 
 ### enumerate
 
-```python [1-2 | 4-5]
+```python
 letters = ["a", "b", "c", "d"]
 fruits = ["apple", "banana", "cherry", "orange"]
 
@@ -427,7 +426,7 @@ a apple b banana c cherry d orange
 
 ### zip
 
-```python [1-2 | 4-5]
+```python
 letters = ["a", "b", "c", "d"]
 fruits = ["apple", "banana", "cherry", "orange"]
 
@@ -491,7 +490,7 @@ print(squared_even)
 
 ### Example - nested
 
-```python [1-3 | 5]
+```python
 numbers = [1, 2]
 letters = ["a", "b"]
 nested = [(i, j) for i in numbers for j in letters]
@@ -513,7 +512,7 @@ print(nested)
 To add an item to the end of the list, use the `append()` method
 
 
-```python [1-2 | 4]
+```python
 fruits = ["apple", "banana", "cherry"]
 fruits.append("orange")
 
@@ -530,7 +529,7 @@ print(fruits)
 To insert a list item at a specified index, use the `insert()` method
 
 
-```python [1-2 | 4]
+```python
 fruits = ["apple", "banana", "cherry"]
 fruits.insert(1, "orange")
 
@@ -548,7 +547,7 @@ To append elements from *another* list to the current list,
 use the `extend()` method
 
 
-```python [1-3 | 5]
+```python
 fruits = ["apple", "banana", "cherry"]
 tropical = ["mango", "pineapple", "papaya"]
 fruits.extend(tropical)
@@ -565,7 +564,7 @@ print(fruits)
 
 We can also use the `+` operator to join lists
 
-```python [1-3 | 5]
+```python
 fruits = ["apple", "banana", "cherry"]
 tropical = ["mango", "pineapple", "papaya"]
 tutti_frutti = fruits + tropical
@@ -583,7 +582,7 @@ print(tutti_frutti)
 The `pop()` method removes the specified index
 
 
-```python [1-2 | 4]
+```python
 fruits = ["apple", "banana", "cherry"]
 fruits.pop(1)
 
@@ -599,7 +598,7 @@ print(fruits)
 
 If you do not specify the index, the `pop()` method removes the last item.
 
-```python [1-2 | 4]
+```python
 fruits = ["apple", "banana", "cherry"]
 fruits.pop()
 
@@ -624,7 +623,7 @@ Note: Last In First Out
 
 List objects have a `sort()` method.
 
-```python [1-2 | 4]
+```python
 fruits = ["orange", "mango", "kiwi", "pineapple", "banana"]
 fruits.sort()
 
