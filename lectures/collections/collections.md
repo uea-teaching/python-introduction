@@ -519,6 +519,11 @@ for i in numbers:
 print(nested)
 ```
 
+```text
+[(1, 'a'), (1, 'b'), (2, 'a'), (2, 'b')]
+```
+<!-- .element: class="fragment" -->
+
 ---
 
 ## List Functions
