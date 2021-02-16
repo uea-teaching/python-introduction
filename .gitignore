@@ -9,6 +9,8 @@
 
 !examples/
 !examples/*.py
+!examples/*.txt
+!examples/*.json
 
 !lectures/
 
