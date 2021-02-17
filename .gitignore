@@ -9,7 +9,8 @@
 
 !examples/
 !examples/*.py
-!examples/*.txt
+!examples/2489.txt
+!examples/test.txt
 !examples/*.json
 
 !lectures/
@@ -26,3 +27,7 @@
 !lectures/collections
 !lectures/collections/*.md
 !lectures/collections/*.html
+
+!lectures/read-write
+!lectures/read-write/*.md
+!lectures/read-write/*.html
