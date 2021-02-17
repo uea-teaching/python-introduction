@@ -482,7 +482,7 @@ print(squared_even)
 ```
 
 ```text
-[4, 16, 32, 64]
+[4, 16, 36, 64]
 ```
 <!-- .element: class="fragment" -->
 
