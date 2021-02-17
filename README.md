@@ -33,3 +33,19 @@ Run a local http server:
     python -m http.server
 
 The slides can then be viewed at `http://localhost:8000`
+
+
+## PDF
+
+I discourage printing of the slides. 
+If you want a static pdf version of the slides I recommend, 
+and use, [decktape](https://github.com/astefanutti/decktape).
+
+> I also recommend using the docker image provided at the link.
+
+For example, to generate a pdf file of the collections lecture:
+
+    decktape reveal  \
+        --size 1280x960 \
+        https://uea-teaching.github.io/python-introduction/lectures/collections \
+        collections.pdf
