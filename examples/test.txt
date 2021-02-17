@@ -1,0 +1,5 @@
+A short text file
+with
+more than
+one
+line
