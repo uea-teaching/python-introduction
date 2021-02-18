@@ -30,9 +30,7 @@ Note: Take care with online resources, that they are uo to date and accurate
 
 # Tuples
 
-A tuple is a collection which is 
-<span class="bright">**ordered**</span> and
-<span class="bright">**immutable**</span>.
+A tuple is a collection which is *ordered* and *immutable*.
 <!-- .element: class="fragment" -->
 
 --
@@ -43,8 +41,7 @@ A tuple is a collection which is
 
 Tuples are used to store multiple items in a single variable.
 
-Tuples are written with parentheses 
-<span class="bright">(</span>round brackets<span class="bright">)</span>.
+Tuples are written using parentheses **(** round brackets **)**.
 <!-- .element: class="fragment" -->
 
 --
@@ -179,17 +176,14 @@ When a function returns multiple values, it returns a tuple.
 
 # Lists
 
-A list is a collection which is 
-<span class="bright">**ordered**</span> and
-<span class="bright">**mutable**</span>.
+A list is a collection which is *ordered* and *mutable*.
 <!-- .element: class="fragment" -->
 
 --
 
 Lists are used to store multiple items in a single variable.
 
-Lists are written with 
-<span class="bright">[</span> square <span class="bright">]</span> brackets.
+Lists are written with **[** square **]** brackets.
 <!-- .element: class="fragment" -->
 
 --
@@ -386,9 +380,9 @@ print(letters[::-1])
 
 # Iterables
 
-Python collections are <span class="bright">`iterable`</span> 
+Python collections are `iterable` 
 
-We can use a <span class="bright">`for`</span> loop to access items
+We can use a `for` loop to access items
 <!-- .element: class="fragment" -->
 
 --
@@ -669,18 +663,14 @@ we looked at last week.
 
 # Sets
 
-A set is a collection which is 
-<span class="bright">**unordered**</span> and has
-<span class="bright">**immutable**</span> items.
+A set is a collection which is *unordered* and has *immutable* items.
 <!-- .element: class="fragment" -->
 
 --
 
 Sets are used to store multiple items in a single variable.
 
-Sets are written with braces 
-<span class="bright">{</span>curly 
-brackets<span class="bright">}</span>.
+Sets are written with braces **{** curly brackets **}**.
 <!-- .element: class="fragment" -->
 
 --
@@ -807,9 +797,7 @@ print(a)
 
 # Dictionaries
 
-A `dictionary` is a collection which is 
-<span class="bright">**ordered**</span>, is
-<span class="bright">**mutable**</span> and
+A `dictionary` is a collection which is *ordered*, is *mutable* and
 does not allow duplicate keys.
 <!-- .element: class="fragment" -->
 
@@ -820,9 +808,7 @@ does not allow duplicate keys.
 
 Dictionaries are used to store data values in key:value pairs in a single variable.
 
-Dictionaries are written with braces 
-<span class="bright">{</span>curly 
-brackets<span class="bright">}</span>.
+Dictionaries are written with braces **{** curly brackets **}**.
 <!-- .element: class="fragment" -->
 
 --
