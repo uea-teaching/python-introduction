@@ -41,7 +41,7 @@ Functions allow us to avoid repeating code.
 
 --
 
-<h1 style="color:#ff00ff">DRY</h1>
+# <span class="bright">DRY</span>
 
 ## Don't Repeat Yourself
 <!-- .element: class="fragment" -->
@@ -262,7 +262,7 @@ sum_three(c=3, a=1, b=2)
 
 --
 
-In this example the function receives a <span style="color:coral">*dictionary*</span> of arguments.
+In this example the function receives a *dictionary* of arguments.
 
 Consult the Python documents to understand the `kwargs.get()` function used here.
 
@@ -477,7 +477,7 @@ sorted_data = sorted(data, key=lambda x: x[1])
 
 The `lambda` function returns the second item in each `tuple`
 
-<span style="color:coral">recall:</span> Python indexes from 0
+*recall:* Python indexes from 0
 <!-- .element: class="fragment" -->
 
 ---
@@ -698,7 +698,7 @@ print(clickme(5, get_cube))
 
 ---
 
-Slides and code are available on BlackBoard
+Slides and code are available on Teams
 
 I have also made them available on GitHub
 
