@@ -1,5 +1,5 @@
 .bright {
-    color: deeppink;
+    color: #00ff2a;
 }
 
 code {
@@ -7,6 +7,15 @@ code {
     font: "Monaco", "Consolas", "Andale Mono", "DejaVu Sans Mono", "Courier New", monospace;
     font-size: 0.95em;
 }
+
+em { 
+    font-style: italic;
+    color: deeppink;
+  }
+
+strong { 
+    color: rgb(255, 169, 20);
+  }
 
 .twocolumn {
     display: grid;
