@@ -23,8 +23,8 @@ Note: Take care with online resources, that they are up to date and accurate
 ## Contents
 
 - Reading and writing files
-- Reading and writing to streams
-- Handling large files
+- Command Line Input
+- Handling Special File Types
 
 ---
 
@@ -89,10 +89,23 @@ Note: there are other file types than text...
 
 --
 
+To read a file it must exist.
+
+```python
+with open("missing.txt") as f:
+    pass
+```
+
+```text
+FileNotFoundError: [Errno 2] No such file or directory: 'missing.txt'
+```
+<!-- .element: class="fragment" -->
+
+--
+
 ## Writing Files
 
-Writing also makes use of a <span class="bright">
-context</span>.
+Writing also makes use of a *context*.
 
 --
 
@@ -103,27 +116,43 @@ with open("out.txt", "w") as f:
     f.write("a line to write\n")
 ```
 
-The second argument to `open` is the file <span class="bright">
-mode</span>.
+The second argument to `open` is the file *mode*.
+<!-- .element: class="fragment" -->
+
+--
+
+# Warning
+
+*if you open an existing file in write mode...*
+
+**it will erase any contents without warning**
 <!-- .element: class="fragment" -->
 
 --
 
 ## File modes
 
-- `r` read from a file
-- `w` writes to a file
-- `a` opens the file for appending
-- `r+` opens the file for both reading and writing
+- `"r"` read from a file (default)
+- `"w"` writes to a file
+- `"a"` opens the file for appending
+- `"x"` create a file - error if it already exists
+- `"r+"` opens the file for both reading and writing
 
-> consult the python docs for details
-<!-- .element: class="fragment" -->
+--
+
+## Text or Binary
+
+- `"t"` Text - human readable (Default)
+- `"b"` Binary mode
+
+Note: In most cases - read and write text files. Binary files
+need a good specification to ensure future compatibility.
 
 --
 
 ## Methods of File Objects
 
-We have more options than `read()` and `write()`.
+There are more options aside from `read()` and `write()`.
 
 --
 
@@ -160,8 +189,10 @@ print(data)
 --
 
 For reading lines from a file, 
-you can loop over the file object. 
-This is memory efficient and fast.
+you can loop over the file object.
+
+This is memory *efficient* and *fast*.
+<!-- .element: class="fragment" -->
 
 --
 
@@ -179,5 +210,105 @@ with
 more than ...
 ```
 <!-- .element: class="fragment" -->
+
+--
+
+## Finer Control
+
+--
+
+This is our test file
+
+```text
+A short text file
+with
+more than
+one
+line
+```
+
+--
+
+## Line by Line
+
+```python [1 | 2 | 3 | 4 | 5 | 6 | 7]
+with open("test.txt") as f:
+    while True:
+        chunk = f.read(3)
+        if not chunk:
+            print("<end of file>")
+            break
+        print(chunk, end="*")
+```
+
+--
+
+```python 
+with open("test.txt") as f:
+    while True:
+        chunk = f.read(3)
+        if not chunk:
+            print("<end of file>")
+            break
+        print(chunk, end="*")
+```
+
+```text
+A s*hor*t t*ext* fi*le
+*wit*h
+m*ore* th*an
+*one*
+li*ne
+*<end of file>
+```
+<!-- .element: class="fragment" -->
+
+---
+
+# User Input
+
+--
+
+```python
+while True:
+    value = input("Enter a value, or type 'q' to quit: ")
+    if value == "q":
+        print("Quitting...")
+        break
+    print("You entered: ", value)
+```
+
+```text
+$: python inputs.py 
+```
+<!-- .element: class="fragment" -->
+
+
+--
+
+```text [1|2|3|4|5|6|7|8]
+Enter a value, or type 'q' to quit: a
+You entered:  a
+Enter a value, or type 'q' to quit: b
+You entered:  b
+Enter a value, or type 'q' to quit: c
+You entered:  c
+Enter a value, or type 'q' to quit: q
+Quitting...
+```
+
+--
+
+## FYI
+
+`input()` works in a **Jupyter Notebook**
+
+---
+
+## Command Line Arguments
+
+---
+
+# Special File Types
 
 ---
