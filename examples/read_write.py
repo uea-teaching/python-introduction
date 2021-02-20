@@ -45,3 +45,24 @@ with open("test.txt") as f:
         print(line, end="")
 
 # %%
+
+with open("test.txt") as f:
+    print(type(f))
+    print(f.mode)
+    
+# %%
+
+with open("missing.txt", "r") as f:
+    pass
+
+# %%
+
+with open("test.txt") as f:
+    while True:
+        chunk = f.read(3)
+        if not chunk:
+            print("<end of file>")
+            break
+        print(chunk, end="*")
+
+# %%
