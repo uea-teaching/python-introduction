@@ -635,6 +635,28 @@ The `json.dump()` method also has a formatting option.
 
 ---
 
+## Other formats
+
+--
+
+The Python standard library has modules for reading and writing...
+
+`.csv` <!-- .element: class="fragment" -->
+`.zip` <!-- .element: class="fragment" -->
+`.tar` <!-- .element: class="fragment" -->
+
+--
+
+Third party modules are available for reading and writing...
+
+`.rar` <!-- .element: class="fragment" -->
+`.h5` <!-- .element: class="fragment" -->
+
+and many others
+<!-- .element: class="fragment" -->
+
+---
+
 # Questions
 
 ---
