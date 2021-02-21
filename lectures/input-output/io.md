@@ -224,7 +224,9 @@ with open("test.txt") as f:
 ```text
 A short text file
 with
-more than ...
+more than
+one
+line
 ```
 <!-- .element: class="fragment" -->
 
@@ -246,7 +248,7 @@ line
 
 --
 
-## Line by Line
+## Case Study
 
 ```python [1 | 2 | 3 | 4 | 5 | 6 | 7]
 with open("test.txt") as f:
@@ -337,7 +339,7 @@ Unix: `bash`, `zsh`, etc...
 
 --
 
-CLI has:
+# Command Line Interface (CLI)
 
 - A **command** or program 
 - Zero or more command line **arguments** 
@@ -406,7 +408,6 @@ Arg 0 is: 'script.py'
 
 <!-- .element: class="fragment" -->
 
-
 --
 
 ### In the shell - example 2
@@ -414,7 +415,6 @@ Arg 0 is: 'script.py'
 ```python
 $ python script.py value another "yet another"
 ```
-
 
 ```text
 Printing Args:
@@ -425,16 +425,221 @@ Arg 3 is: 'yet another'
 ```
 <!-- .element: class="fragment" -->
 
-
 - `python` is the command
 - `script.py value another "yet another"`  are arguments
 
 <!-- .element: class="fragment" -->
+
+--
+
+## `argparse`
+
+https://docs.python.org/3/library/argparse.html
+
+Note: If you want to go beyond the simplest case, consider argparse.
+
+--
+
+## `prog.py`
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser(
+    description='Process some integers.')
+parser.add_argument(
+    'integers', metavar='N', type=int, nargs='+',
+    help='an integer for the accumulator')
+parser.add_argument(
+    '--sum', dest='accumulate', action='store_const',
+    const=sum, default=max,
+    help='sum the integers (default: find the max)')
+
+args = parser.parse_args()
+print(args.accumulate(args.integers))
+```
+
+--
+
+```text
+$ python prog.py -h
+```
+
+```text
+usage: prog.py [-h] [--sum] N [N ...]
+
+Process some integers.
+
+positional arguments:
+  N           an integer for the accumulator
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --sum       sum the integers (default: find the max)
+```
+<!-- .element: class="fragment" -->
+
+--
+
+## Third party parsers
+
+**click**
+
+https://palletsprojects.com/p/click/
 
 
 ---
 
 # Special File Types
 
+--
+
+## JSON 
+### JavaScript Object Notation
+
+https://docs.python.org/3/library/json.html
+
+--
+
+JSON exists as a `string`
+
+```python
+s = '{"name": "red", "values": [255, 0, 0]}'
+```
+
+Note: This format follows the dictionary literal from last week.
+
+--
+
+```python
+import json
+
+s = '{"name": "red", "values": [255, 0, 0]}'
+col = json.loads(s)
+```
+
+`col` is a `dictionary`
+<!-- .element: class="fragment" -->
+
+```python
+print(col["name"])
+```
+<!-- .element: class="fragment" -->
+
+```text
+red
+```
+<!-- .element: class="fragment" -->
+
+--
+
+convert a `dictionary` to a JSON `string`
+
+```python
+import json
+
+col = dict(name="red", values=[255, 0, 0])
+s = json.dumps(col)
+
+print(s)
+```
+
+```text
+{"name": "red", "values": [255, 0, 0]}
+```
+<!-- .element: class="fragment" -->
+
+--
+
+### FYI
+
+The JSON format only supports basic `types`
+
+User defined classes, numpy arrays, etc. are not supported.
+
+--
+
+## Reading from file
+
+```python
+import json
+
+with open("colours.json") as f:
+    cold = json.load(f)
+```
+
+The `json.load()` method accepts a  `file`  object.
+<!-- .element: class="fragment" -->
+
+`cold` is a `dictionary`
+<!-- .element: class="fragment" -->
+
+Note: very similar to earlier examples...
+
+--
+
+### Formatting
+
+The `json.dumps()` method has a formatting option.
+
+```python
+import json
+
+with open("colours.json") as f:
+    cold = json.load(f)
+
+cols = json.dumps(cold, indent=4)
+print(cols)
+```
+
+--
+
+```text
+{
+    "colors": [
+        {
+            "name": "red",
+            "values": [
+                255,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "green",
+            "values": [
+...
+```
+
+Note: the output is truncated on the slide
+
+--
+
+## Writing JSON
+
+```python
+import json
+
+col = dict(name="red", values=[255, 0, 0])
+
+with open("red.json", "w") as f:
+    json.dump(col, f)
+```
+
+--
+
+### Formatting
+
+The `json.dump()` method also has a formatting option.
+
 ---
 
+# Questions
+
+---
+
+Slides and code are available on Teams
+
+I have also made everything available on GitHub
+
+https://github.com/uea-teaching/python-introduction
