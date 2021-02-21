@@ -352,10 +352,11 @@ Unix: `bash`, `zsh`, etc...
 $ python -h
 ```
 
-- `python` is the command
-- `-h` is an argument - in this case *optional*
+`python` is the command
 
-**Do** try this at home
+`-h` is an argument - in this case *optional*
+
+### **Do** try this at home
 <!-- .element: class="fragment" -->
 
 --
@@ -371,7 +372,6 @@ def main():
         print(f"Arg {i} is: '{arg}'")
 
 main()
-
 ```
 
 --
@@ -385,7 +385,6 @@ def main():
         print(f"Arg {i} is: '{arg}'")
 
 main()
-
 ```
 
 --
@@ -458,6 +457,8 @@ parser.add_argument(
 args = parser.parse_args()
 print(args.accumulate(args.integers))
 ```
+
+Note: directly from the documents output on next slide
 
 --
 
