@@ -4,18 +4,30 @@
 
 code {
     color: coral;
-    font: "Monaco", "Consolas", "Andale Mono", "DejaVu Sans Mono", "Courier New", monospace;
+    font: monospace;
     font-size: 0.95em;
 }
 
-em { 
+em {
     font-style: italic;
     color: deeppink;
-  }
+}
 
-strong { 
+strong {
     color: rgb(255, 169, 20);
-  }
+}
+
+.column-left {
+    float: left;
+    width: 49%;
+    text-align: left;
+}
+
+.column-right {
+    float: right;
+    width: 49%;
+    text-align: right;
+}
 
 .twocolumn {
     display: grid;
