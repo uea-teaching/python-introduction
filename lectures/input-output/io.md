@@ -652,7 +652,7 @@ Third party modules are available for reading and writing...
 `.rar` <!-- .element: class="fragment" -->
 `.h5` <!-- .element: class="fragment" -->
 
-and many others
+and many, many others...
 <!-- .element: class="fragment" -->
 
 ---
