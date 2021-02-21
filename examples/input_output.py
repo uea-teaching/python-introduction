@@ -96,3 +96,13 @@ cols = json.dumps(cold, indent=4)
 print(cols)
 
 # %%
+
+import json
+
+col = dict(name="red", values=[255, 0, 0])
+
+with open("red.json", "w") as f:
+    json.dump(col, f)
+
+
+# %%
