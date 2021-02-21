@@ -594,7 +594,52 @@ print(cols)
 
 --
 
+```text
+{
+    "colors": [
+        {
+            "name": "red",
+            "values": [
+                255,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "green",
+            "values": [
+...
+```
 
+Note: the output is truncated on the slide
+
+--
+
+## Writing JSON
+
+```python
+import json
+
+col = dict(name="red", values=[255, 0, 0])
+
+with open("red.json", "w") as f:
+    json.dump(col, f)
+```
+
+--
+
+### Formatting
+
+The `json.dump()` method also has a formatting option.
 
 ---
 
+# Questions
+
+---
+
+Slides and code are available on Teams
+
+I have also made everything available on GitHub
+
+https://github.com/uea-teaching/python-introduction
