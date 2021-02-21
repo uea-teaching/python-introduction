@@ -42,11 +42,27 @@ We use the built-in `open()` function to read files in Python.
 
 --
 
+`test.txt`
+
+```text
+A short text file
+with
+more than
+one
+line
+```
+
+--
+
 ## Contexts
 
-Python has a useful construct, the context manager, that helps us open files safely with minimal code.
+Python has a useful construct: the **context manager**
+
+A context helps us open files safely with minimal code.
+<!-- .element: class="fragment" -->
 
 We create a context using the keyword `with`
+<!-- .element: class="fragment" -->
 
 --
 
@@ -83,6 +99,7 @@ finally:
 --
 
 Our example reads a plain text file.
+
 The data is returned as a `string`.
 
 Note: there are other file types than text...
@@ -283,7 +300,6 @@ $: python inputs.py
 ```
 <!-- .element: class="fragment" -->
 
-
 --
 
 ```text [1|2|3|4|5|6|7|8]
@@ -305,10 +321,120 @@ Quitting...
 
 ---
 
-## Command Line Arguments
+# Command Line Interface (CLI)
+
+--
+
+A CLI is enabled by the *shell* interpreter. 
+
+The shell exposes a command prompt.
+
+Windows: `PowerShell`
+<!-- .element: class="fragment" -->
+
+Unix: `bash`, `zsh`, etc...
+<!-- .element: class="fragment" -->
+
+--
+
+CLI has:
+
+- A **command** or program 
+- Zero or more command line **arguments** 
+
+--
+
+### Python Command Line
+
+```text
+$ python -h
+```
+
+- `python` is the command
+- `-h` is an argument - in this case *optional*
+
+**Do** try this at home
+<!-- .element: class="fragment" -->
+
+--
+
+### `script.py`
+
+```python [1 | 3 | 4 | 5 | 6 | 8]
+import sys
+
+def main():
+    print("Printing Args:")
+    for i, arg in enumerate(sys.argv):
+        print(f"Arg {i} is: '{arg}'")
+
+main()
+
+```
+
+--
+
+```python
+import sys
+
+def main():
+    print("Printing Args:")
+    for i, arg in enumerate(sys.argv):
+        print(f"Arg {i} is: '{arg}'")
+
+main()
+
+```
+
+--
+
+### In the shell - example 1
+
+```python
+$ python script.py
+```
+
+```text
+Printing Args:
+Arg 0 is: 'script.py'
+```
+<!-- .element: class="fragment" -->
+
+
+- `python` is the command
+- `script.py` is an argument
+
+<!-- .element: class="fragment" -->
+
+
+--
+
+### In the shell - example 2
+
+```python
+$ python script.py value another "yet another"
+```
+
+
+```text
+Printing Args:
+Arg 0 is: 'script.py'
+Arg 1 is: 'value'
+Arg 2 is: 'another'
+Arg 3 is: 'yet another'
+```
+<!-- .element: class="fragment" -->
+
+
+- `python` is the command
+- `script.py value another "yet another"`  are arguments
+
+<!-- .element: class="fragment" -->
+
 
 ---
 
 # Special File Types
 
 ---
+
