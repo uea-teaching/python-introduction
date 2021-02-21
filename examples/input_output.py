@@ -66,3 +66,33 @@ with open("test.txt") as f:
         print(chunk, end="*")
 
 # %%
+
+
+import json
+
+s = '{"name": "red", "values": [255, 0, 0]}'
+col = json.loads(s)
+
+print(col["name"])
+
+
+# %%
+
+import json
+
+col = dict(name="red", values=[255, 0, 0])
+s = json.dumps(col)
+
+print(s)
+
+# %%
+
+import json
+
+with open("colours.json") as f:
+    cold = json.load(f)
+
+cols = json.dumps(cold, indent=4)
+print(cols)
+
+# %%
