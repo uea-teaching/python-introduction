@@ -339,7 +339,7 @@ Unix: `bash`, `zsh`, etc...
 
 --
 
-# Command Line Interface (CLI)
+### Command Line Interface (CLI)
 
 - A **command** or program 
 - Zero or more command line **arguments** 
