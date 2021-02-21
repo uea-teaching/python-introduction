@@ -15,7 +15,8 @@
 !lectures/
 
 !lectures/assets/
-!lectures/assets/*.jpg
+!lectures/assets/img/*.jpg
+!lectures/assets/img/*.png
 !lectures/assets/css/
 !lectures/assets/css/*.css
 

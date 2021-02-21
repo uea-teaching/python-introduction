@@ -35,7 +35,7 @@ A tuple is a collection which is *ordered* and *immutable*.
 
 --
 
-![pronouncing](../assets/tuhple-toople.jpg)
+![pronouncing](../assets/img/tuhple-toople.jpg)
 
 --
 
