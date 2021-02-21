@@ -27,6 +27,6 @@
 !lectures/collections/*.md
 !lectures/collections/*.html
 
-!lectures/read-write
-!lectures/read-write/*.md
-!lectures/read-write/*.html
+!lectures/input-output
+!lectures/input-output/*.md
+!lectures/input-output/*.html
