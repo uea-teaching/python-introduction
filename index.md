@@ -17,4 +17,4 @@ Move through the slides with the arrow keys, toggle "o" to get an overview.
 
 * [Functions in Python](lectures/functions/)
 * [Python Collections](lectures/collections/)
-* [Reading and Writing](lectures/read-write/)
+* [Input and Output](lectures/read-write/)
