@@ -354,7 +354,13 @@ $ python -h
 
 `python` is the command
 
+<!-- .element: class="fragment" -->
+
+
 `-h` is an argument - in this case *optional*
+
+<!-- .element: class="fragment" -->
+
 
 ### **Do** try this at home
 <!-- .element: class="fragment" -->
