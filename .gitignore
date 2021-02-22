@@ -31,3 +31,7 @@
 !lectures/input-output
 !lectures/input-output/*.md
 !lectures/input-output/*.html
+
+!lectures/interactive
+!lectures/interactive/*.md
+!lectures/interactive/*.html
