@@ -18,3 +18,4 @@ Move through the slides with the arrow keys, toggle "o" to get an overview.
 * [Functions in Python](lectures/functions/)
 * [Python Collections](lectures/collections/)
 * [Input and Output](lectures/input-output/)
+* [Interactive Python](lectures/interactive-python/)
