@@ -32,6 +32,6 @@
 !lectures/input-output/*.md
 !lectures/input-output/*.html
 
-!lectures/interactive
-!lectures/interactive/*.md
-!lectures/interactive/*.html
+!lectures/interactive-python
+!lectures/interactive-python/*.md
+!lectures/interactive-python/*.html
