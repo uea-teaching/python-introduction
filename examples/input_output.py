@@ -1,11 +1,3 @@
-# %% files examples
-
-moby_url = "https://github.com/uea-teaching/python-introduction/raw/main/examples/2489.txt"
-cols_url = "https://github.com/uea-teaching/python-introduction/raw/main/examples/colours.json"
-
-moby_file = "2489.txt"
-cols_file = "colours.json"
-
 # %%
 
 with open("test.txt") as f:
