@@ -200,7 +200,7 @@ Note: timeit repeats the operation and reports the average
 
 --
 
-## `%matplotlib`
+### `%matplotlib`
 
 ```python
 In [1]: %matplotlib
