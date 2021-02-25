@@ -141,6 +141,89 @@ we also get tab completion, with object awareness...
 
 Note: here, the interpreter is aware data[0] is a string.
 
+--
+
+just like MATLAB, we have the `whos` command to see the workspace variables.
+
+![ipython-whos](../assets/img/ipython-whos.png)
+
+Note: here, the interpreter is aware data[0] is a string.
+
+--
+
+We can use any shell command by prefixing with `!`
+
+For example, `!ls`, `!pwd`, and `!echo`
+
+--
+
+It's possible to capture output as a python object.
+
+```python
+In [1]: pwd = !pwd
+
+In [2]: pwd
+Out[3]: ['/Users/davegreenwood']
+
+```
+
+--
+
+## `%magics`
+
+IPython has a number of commands available specific to and provided by the kernel.
+
+--
+
+### `%edit`
+
+We can launch a file editor and write some code
+
+```python
+In [17]: %edit
+IPython will make a temporary file named: /var/folders/tmp.py
+Editing... done. Executing edited code...
+56088
+Out[17]: 'a = 123\nb = 456\nx = a*b\nprint(x)\n\n'
+```
+
+--
+
+### `%timeit`
+
+```python
+In [19]: %timeit sum(range(100))
+1.03 µs ± 16.7 ns per loop (1000000 loops)
+```
+
+Note: timeit repeats the operation and reports the average
+
+--
+
+## `%matplotlib`
+
+```python
+In [1]: %matplotlib
+Using matplotlib backend: MacOSX
+
+In [2]: import numpy as np
+In [3]: import matplotlib.pyplot as plt
+
+In [4]: x = np.linspace(0, 2*np.pi, 1000)
+In [5]: y = np.sin(x)
+
+In [6]: plt.plot(x, y)
+Out[7]: [<matplotlib.lines.Line2D at 0x7ffa481b65e0>]
+
+```
+
+--
+
+<img src="../assets/img/ipython-plot.png" alt="plot">
+
+Note: Gives interactive plotting to the console, but 
+I recommend the jupyter environment for this purpose.
+
 ---
 
 # Jupyter
