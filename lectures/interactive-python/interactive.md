@@ -301,5 +301,20 @@ To use interact, you need to define a function that you want to explore.
 
 --
 
+### Jupyter project blog
+
+https://blog.jupyter.org
+
+---
+
+# Questions
+
+---
+
+Slides and code are available on Teams
+
+I have also made everything available on GitHub
+
+https://github.com/uea-teaching/python-introduction
 
 ---
