@@ -11,6 +11,7 @@
 !examples/2489.txt
 !examples/test.txt
 !examples/*.json
+!examples/*.ipynb
 
 !lectures/
 
