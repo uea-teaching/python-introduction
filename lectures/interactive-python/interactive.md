@@ -264,12 +264,6 @@ https://github.com/jupyter-widgets/ipywidgets/blob/master/docs/source/examples/W
 
 --
 
-<!-- .slide: data-background-image="../assets/img/sortie.jpg" -->
-
-# Example
-
---
-
 ## Types of Widget
 
 Most basic types have a corresponding widget.
@@ -279,6 +273,12 @@ There are *password*, *html* and *image* widgets...
 
 ...and **many** others.
 <!-- .element: class="fragment" -->
+
+--
+
+<!-- .slide: data-background-image="../assets/img/sortie.jpg" -->
+
+# Example
 
 --
 
