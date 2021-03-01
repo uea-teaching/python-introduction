@@ -243,7 +243,7 @@ Named jupyter according to co-founder Fernando Pérez
 Jupyter Notebooks consist of two parts:
 
 1. User input, in the form of a file read by a browser.
-2. A computational **kernel**, either local or remote.
+2. A computational **kernel**, either *local* or *remote*.
 
 Note: The file extension ipynb infers ipython notebook.
 The file is in fact legitimate JSON, and can be parsed as such. 
@@ -252,8 +252,54 @@ The file is in fact legitimate JSON, and can be parsed as such.
 
 ## Widgets
 
+You can use widgets to build interactive GUIs for your notebooks.
+<!-- .element: class="fragment" -->
+
 Note:
 
+Widgets are eventful python objects that have a representation in the browser, 
+often as a control like a slider, textbox, etc.
+
 https://github.com/jupyter-widgets/ipywidgets/blob/master/docs/source/examples/Widget%20Basics.ipynb
+
+--
+
+<!-- .slide: data-background-image="../assets/img/sortie.jpg" -->
+
+# Example
+
+--
+
+## Types of Widget
+
+Most basic types have a corresponding widget.
+
+There are *password*, *html* and *image* widgets...
+<!-- .element: class="fragment" -->
+
+...and **many** others.
+<!-- .element: class="fragment" -->
+
+--
+
+## Interact
+
+Interact allows us to pass values from widgets to python functions.
+
+Note:
+
+At the most basic level, interact autogenerates UI controls for function 
+arguments, and then calls the function with those arguments when you 
+manipulate the controls interactively. 
+To use interact, you need to define a function that you want to explore.
+
+--
+
+<!-- .slide: data-background-image="../assets/img/exit.jpg" -->
+
+# Example
+
+--
+
 
 ---
