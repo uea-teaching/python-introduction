@@ -228,4 +228,32 @@ I recommend the jupyter environment for this purpose.
 
 # Jupyter
 
+--
+
+> The name Jupyter, is inspired by the programming languages **Ju**lia, **Py**thon and **R**.
+
+> from an [article](https://www.nature.com/articles/d41586-018-07196-1) on nature.com
+
+Note:
+Jupyter is a free, open-source, interactive web tool known as a computational notebook. 
+Named jupyter according to co-founder Fernando Pérez
+
+--
+
+Jupyter Notebooks consist of two parts:
+
+1. User input, in the form of a file read by a browser.
+2. A computational **kernel**, either local or remote.
+
+Note: The file extension ipynb infers ipython notebook.
+The file is in fact legitimate JSON, and can be parsed as such. 
+
+--
+
+## Widgets
+
+Note:
+
+https://github.com/jupyter-widgets/ipywidgets/blob/master/docs/source/examples/Widget%20Basics.ipynb
+
 ---
