@@ -147,7 +147,7 @@ Note: here, the interpreter is aware data[0] is a string.
 
 --
 
-just like MATLAB, we have the `whos` command to see the workspace variables.
+the `whos` command shows the workspace variables.
 
 ![ipython-whos](../assets/img/ipython-whos.png)
 
