@@ -318,6 +318,7 @@ https://blog.jupyter.org
 
 https://ipython-books.github.io
 
+
 ---
 
 # Questions
@@ -328,8 +329,6 @@ Slides and code are available on Teams
 
 I have also made everything available on GitHub
 
-https://github.com/uea-teaching/python-introduction
-
 --
 
 one more thing...
@@ -339,5 +338,7 @@ one more thing...
 --
 
 ![code](../assets/img/ghqr.png)
+
+https://github.com/uea-teaching/python-introduction
 
 ---
