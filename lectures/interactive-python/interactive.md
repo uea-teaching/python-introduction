@@ -282,6 +282,8 @@ There are *password*, *html* and *image* widgets...
 
 # Example
 
+[notebook](https://github.com/uea-teaching/python-introduction/blob/main/notebooks/widget_basics.ipynb)
+
 --
 
 ## Interact
@@ -300,6 +302,8 @@ To use interact, you need to define a function that you want to explore.
 <!-- .slide: data-background-image="../assets/img/exit.jpg" -->
 
 # Example
+
+[notebook](https://github.com/uea-teaching/python-introduction/blob/main/notebooks/widget_interact.ipynb)
 
 --
 
