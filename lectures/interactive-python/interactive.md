@@ -45,6 +45,8 @@ The Python shell, or REPL, is the simplest way to access the Language.
 
 However, it is only suitable for the shortest excursions.
 
+Note: Read Evaluate Print Loop (REPL)
+
 --
 
 in your shell, type `python`
@@ -280,6 +282,8 @@ There are *password*, *html* and *image* widgets...
 
 # Example
 
+[notebook](https://github.com/uea-teaching/python-introduction/blob/main/notebooks/widget_basics.ipynb)
+
 --
 
 ## Interact
@@ -288,7 +292,7 @@ Interact allows us to pass values from widgets to python functions.
 
 Note:
 
-At the most basic level, interact autogenerates UI controls for function 
+At the most basic level, interact auto generates UI controls for function 
 arguments, and then calls the function with those arguments when you 
 manipulate the controls interactively. 
 To use interact, you need to define a function that you want to explore.
@@ -299,11 +303,20 @@ To use interact, you need to define a function that you want to explore.
 
 # Example
 
+[notebook](https://github.com/uea-teaching/python-introduction/blob/main/notebooks/widget_interact.ipynb)
+
 --
 
 ### Jupyter project blog
 
 https://blog.jupyter.org
+
+
+--
+
+### IPython Cookbook
+
+https://ipython-books.github.io
 
 ---
 
