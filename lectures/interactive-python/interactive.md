@@ -85,6 +85,8 @@ secondary prompt for continuation lines...
 ![py-shell-alt-prompt](../assets/img/py-shell-alt-prompt.png)
 
 Note: you can use tab to indent, and return moves to next line...
+The basic python shell is fine when you have only the standard library available.
+BUT, if you have ipython installed... 
 
 ---
 
@@ -149,7 +151,6 @@ just like MATLAB, we have the `whos` command to see the workspace variables.
 
 ![ipython-whos](../assets/img/ipython-whos.png)
 
-Note: here, the interpreter is aware data[0] is a string.
 
 --
 
@@ -291,7 +292,6 @@ There are *password*, *html* and *image* widgets...
 Interact allows us to pass values from widgets to python functions.
 
 Note:
-
 At the most basic level, interact auto generates UI controls for function 
 arguments, and then calls the function with those arguments when you 
 manipulate the controls interactively. 
@@ -329,5 +329,15 @@ Slides and code are available on Teams
 I have also made everything available on GitHub
 
 https://github.com/uea-teaching/python-introduction
+
+--
+
+one more thing...
+
+![qr](../assets/img/ipython-qr.jpg)
+
+--
+
+![code](../assets/img/ghqr.png)
 
 ---
