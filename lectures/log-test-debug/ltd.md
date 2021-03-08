@@ -55,18 +55,31 @@ The simplest way to report the status of a program is the `print()` statement.
 
 The `logging` module greatly extends this facility
 
-Notes: https://docs.python.org/3/howto/logging.html#when-to-use-logging
+Note: https://docs.python.org/3/howto/logging.html#when-to-use-logging
 
 --
 
 <!-- .slide: data-auto-animate -->
 ## Logging
 
-* Send logs to multiple outputs.
+Writing logs is a big topic, more info here:
+
+* [Basic Tutorial](https://docs.python.org/3/howto/logging.html#logging-basic-tutorial)
+* [Advanced Tutorial](https://docs.python.org/3/howto/logging.html#logging-advanced-tutorial)
+* [Logging Cookbook](https://docs.python.org/3/howto/logging-cookbook.html#logging-cookbook)
+
+--
+
+<!-- .slide: data-auto-animate -->
+## Logging
+
+What can we do?
+
+* send logs to multiple outputs
 <!-- .element: class="fragment" -->
-* Segregate logging according to module structure
+* segregate logging according to module structure
 <!-- .element: class="fragment" -->
-* Define logging at different levels
+* define logging at different levels
 <!-- .element: class="fragment" -->
 
 Note: stdout, stderr, and files...
@@ -143,11 +156,352 @@ Note: log2.py, example.log
 
 --
 
+### `logging.basicConfig(...)`
+
+As the name suggests, we can configure our logs here.
+<!-- .element: class="fragment" -->
+
+The call to `basicConfig()` should come before any calls to `debug()`, `info()` etc.
+
+<!-- .element: class="fragment" -->
+
+Note: I wont look at every option - don't forget the help!
 
 --
 
-https://docs.python.org/3/howto/logging-cookbook.html
+### Formatter
+<!-- .slide: data-auto-animate -->
 
-An excellent advanced tutorial on logging, including multi threading.
+
+Formatter objects configure the final order, structure, and contents of the log message.
 
 --
+
+### Formatter
+<!-- .slide: data-auto-animate -->
+
+
+```python
+formatter = logging.Formatter(
+    '%(asctime)s - %(levelname)s - %(message)s')
+```
+
+Note: This creates a formatter object. 
+
+--
+
+### Formatter
+<!-- .slide: data-auto-animate -->
+
+In most cases it easier to pass a string to `basicConfig()`
+
+--
+
+### Formatter
+<!-- .slide: data-auto-animate -->
+
+```python
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s")
+```
+
+--
+
+### Formatter
+<!-- .slide: data-auto-animate -->
+
+Using default output to `stderr`
+
+```text
+2021-03-08 12:51:00,391 - INFO - This will go to the log file.
+2021-03-08 12:51:00,391 - WARNING - And this, too
+2021-03-08 12:51:00,391 - ERROR - That's torn it!!
+```
+
+Note: Formatting is in itself a large subject. 
+There is extensive documentation.
+
+--
+
+### Handlers
+<!-- .slide: data-auto-animate -->
+
+Handler objects despatch log messages to the specified destination.
+
+--
+
+
+### Handlers
+<!-- .slide: data-auto-animate -->
+
+```python
+handler = logging.StreamHandler()
+```
+
+Note: This creates a handler object.
+
+--
+
+### Handlers
+<!-- .slide: data-auto-animate -->
+
+We can create handlers for streams and files.
+
+Note: We can add fine grained control such as different levels for each handler. Different threads, modules, etc...
+
+--
+
+### Handlers
+<!-- .slide: data-auto-animate -->
+
+We will use `basicConfig()` to set up some handlers.
+
+Note: https://stackoverflow.com/a/46098711/10188737
+
+--
+
+### Handlers
+<!-- .slide: data-auto-animate -->
+
+```python
+filehandler = logging.FileHandler("debug.log")
+filehandler.setLevel(logging.DEBUG)
+
+streamhandler = logging.StreamHandler()
+streamhandler.setLevel(logging.INFO)
+
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+    handlers=[filehandler, streamhandler]
+)
+```
+
+--
+
+### Handlers
+<!-- .slide: data-auto-animate -->
+
+```python
+logging.debug("This will go to the debug log file")
+logging.info("See the debug log file and std err.")
+logging.warning("And this, too")
+```
+
+```text
+2021-03-08 14:43:07 [DEBUG] This will go to the debug log file
+2021-03-08 14:43:07 [INFO] See the debug log file and std err.
+2021-03-08 14:43:07 [WARNING] And this, too
+```
+
+--
+
+### Handlers
+<!-- .slide: data-auto-animate -->
+
+```python [4]
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+    handlers=[filehandler, streamhandler]
+)
+```
+
+Notice the `datefmt` argument!
+
+--
+
+### Naming Loggers
+<!-- .slide: data-auto-animate -->
+
+Loggers exist in a hierarchy.
+
+It is useful to know where the message comes from.
+
+--
+
+### Naming Loggers
+<!-- .slide: data-auto-animate -->
+
+`aux_mod.py`
+
+```python [1 | ]
+LOG = logging.getLogger(__name__)
+
+def some_function():
+    LOG.info("calling: 'some_function'")
+```
+
+--
+
+### Naming Loggers
+<!-- .slide: data-auto-animate -->
+
+`main.py`
+
+```python [7 | ]
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S")
+
+logging.info("calling from main: root logger")
+some_function()
+```
+
+--
+
+### Naming Loggers
+<!-- .slide: data-auto-animate -->
+
+```text
+2021-03-08 15:05:51 - root - calling from main: root logger
+2021-03-08 15:05:51 - log_aux - calling: 'some_function'
+```
+
+---
+
+## Unit Testing
+<!-- .slide: data-auto-animate -->
+
+--
+
+## Unit Testing
+<!-- .slide: data-auto-animate -->
+
+Unit testing is another **big** topic.
+
+Here, I just want to introduce the builtin `unittest` module.
+<!-- .element: class="fragment" -->
+
+--
+
+## Unit Testing
+<!-- .slide: data-auto-animate -->
+
+Involves developing a *test case* that confirms an assertion.
+
+--
+
+## `Unittest`
+
+* testing framework
+* test runner
+
+Note:
+unittest contains both a testing framework and a test runner. 
+unittest has some important requirements for writing and executing tests.
+
+--
+
+## `Unittest`
+
+* tests are class methods
+* assertion methods *not* `assert` statement
+
+Note:
+You put your tests into classes as methods
+You use a series of special assertion methods in the unittest.TestCase class instead of the built-in assert statement
+
+--
+
+<!-- .slide: data-auto-animate -->
+`test_basic.py`
+
+```python
+import unittest
+
+class TestStringMethods(unittest.TestCase):
+    def test_upper(self):
+        self.assertEqual('foo'.upper(), 'FOO')
+
+    def test_isupper(self):
+        self.assertTrue('FOO'.isupper())
+
+    def test_split(self):
+        s = 'hello world'
+        with self.assertRaises(TypeError):
+            s.split(2)
+```
+
+--
+
+<!-- .slide: data-auto-animate -->
+`test_basic.py`
+
+```python
+if __name__ == '__main__':
+    unittest.main()
+```
+
+```text
+python test_basic.py
+```
+<!-- .element: class="fragment" -->
+
+```text
+...
+-------------------------------------
+Ran 3 tests in 0.000s
+
+OK
+```
+<!-- .element: class="fragment" -->
+
+--
+
+<!-- .slide: data-auto-animate -->
+### Command Line Interface
+
+```text
+python -m unittest -v test_basic.py 
+```
+
+`-m` option because `unittest` is a module
+<!-- .element: class="fragment" -->
+
+--
+
+<!-- .slide: data-auto-animate -->
+### Command Line Interface
+
+`-v` option for verbose output
+
+```text
+test_isupper (examples.test_basic.TestStringMethods) ... ok
+test_split (examples.test_basic.TestStringMethods) ... ok
+test_upper (examples.test_basic.TestStringMethods) ... ok
+```
+<!-- .element: class="fragment" -->
+
+--
+
+## `Unittest`
+
+`unittest` supports [test discovery](https://docs.python.org/3/library/unittest.html#test-discovery)
+
+
+--
+
+Many editors support testing frameworks.
+
+Note: VSCode
+
+--
+
+Third Party Test Frameworks
+
+`pytest` 
+<!-- .element: class="fragment" -->
+`nose`
+<!-- .element: class="fragment" -->
+
+...and many [others](https://wiki.python.org/moin/PythonTestingToolsTaxonomy)
+<!-- .element: class="fragment" -->
+
+---
+
+## Debugging
