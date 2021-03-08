@@ -165,7 +165,8 @@ The call to `basicConfig()` should come before any calls to `debug()`, `info()` 
 
 <!-- .element: class="fragment" -->
 
-Note: I wont look at every option - don't forget the help!
+Note: In the previous example I used basicConfig()...
+I wont look at every option - don't forget the help!
 
 --
 
