@@ -506,3 +506,298 @@ Third Party Test Frameworks
 ---
 
 ## Debugging
+
+--
+
+When things go wrong, **debugging** allows us to identify **exactly** what is causing a problem.
+
+Note: That is, if we haven't got useful feedback from our logfiles!!  
+
+--
+
+# pdb
+### The **P**ython **d**e**b**ugger
+
+--
+
+The module `pdb` defines an interactive source code debugger for Python programs.
+
+Note: In most cases, you will debug your code interactively in an ide. BUT, it
+is useful to be able to debug on the cmd line, for example on a remote server.
+
+--
+
+The official documents are [here](https://docs.python.org/3/library/pdb.html)
+
+There is an in depth tutorial [here](https://www.digitalocean.com/community/tutorials/how-to-use-the-python-debugger)
+
+Note: the second link, the digital ocean tutorial is the basis for this section.
+
+--
+
+`debug1.py`
+
+```python []
+numbers = [500, 600, 700]
+letters = ['x', 'y', 'z']
+
+def nested_loop():
+    for number in numbers:
+        print(number)
+        for letter in letters:
+            print(letter)
+
+if __name__ == '__main__':
+    nested_loop()
+```
+
+--
+
+Call the program on the command line
+
+`$ python -m pdb debug1.py`
+
+Note:
+The -m command-line flag will import any 
+Python module for you and run it as a script. 
+In this case we are importing and running 
+the pdb module, which we pass into the command as shown above.
+
+--
+
+you’ll see this output:
+
+```text
+> /Users/daveg/debug1.py(1)<module>()
+-> numbers = [500, 600, 700]
+(Pdb) 
+```
+
+Note:
+In the output, the first line contains the current module name  with a
+directory path, and the printed line number that follows. 
+The second line shows the current line of source code that is executed
+here, as pdb provides an interactive console for debugging.
+You can use the command help to learn its commands, and help command
+to learn more about a specific command. Note that the pdb console is
+different than the Python interactive shell.
+
+--
+
+### FYI
+
+to leave the `pdb` command line, type `exit` or `quit`
+
+Note: I hope that is a familiar pattern by now...
+
+The Python debugger will automatically repeat when it reaches the end of your program. Whenever you want to leave the pdb console, type the command quit or exit. If you would like to explicitly restart a program at any place within the program, you can do so with the command run.
+
+--
+
+<!-- .slide: data-auto-animate -->
+### Move through a Program
+
+Type `list` to gain context around the current line.
+
+--
+
+```text
+(Pdb) list
+  1  -> numbers = [500, 600, 700]
+  2     letters = ['x', 'y', 'z']
+  3  
+  4  
+  5     def nested_loop():
+  6         for number in numbers:
+  7             print(number)
+  8             for letter in letters:
+  9                 print(letter)
+ 10  
+ 11     if __name__ == '__main__':
+(Pdb) 
+```
+
+--
+
+The current line is marked with the characters `->`
+
+Note: Since this is a relatively short program, 
+we receive nearly all of the program back with the list command. Without providing arguments, the list command provides 11 lines around the current line, but you can also specify which lines to include, like so:
+
+--
+
+We can specify which lines to view.
+
+```text
+(Pdb) list 3, 7
+  3  
+  4  
+  5     def nested_loop():
+  6         for number in numbers:
+  7             print(number)
+(Pdb)
+```
+
+--
+
+We can type `step` to move line by line.
+
+```text
+(Pdb) step
+> /Users/daveg/debug1.py(2)<module>()
+-> letters = ['x', 'y', 'z']
+(Pdb)
+```
+
+--
+
+We can type `pp` to print the value of a variable.
+
+```text
+(Pdb) step
+> /Users/daveg/debug1.py(7)nested_loop()
+-> print(number)
+(Pdb) pp number
+500
+(Pdb)
+```
+
+--
+
+## Breakpoints
+
+Note:
+You typically will be working with larger programs than the example above.
+By using the break command to set breakpoints, you’ll run the program up until the specified breakpoint.
+
+When you insert a breakpoint, the debugger assigns a number to it.
+The numbers assigned to breakpoints are successive integers 
+that begin with the number 1, which you can refer to when working 
+with breakpoints.
+
+--
+
+Breakpoints can be placed at line numbers:
+
+`<program_file>:<line_number>`
+
+--
+
+```text [1]
+(Pdb) break debug1.py:7
+Breakpoint 1 at /Users/daveg/debug1.py:7
+(Pdb)
+```
+
+--
+
+type `clear`, ` y` to remove all breakpoints
+
+```text
+(Pdb) clear
+Clear all breaks? y
+Deleted breakpoint 1 at /Users/daveg/debug1.py:7
+(Pdb)
+```
+
+--
+
+Breakpoints can be placed at function definitions:
+
+`<program_file>.<function_name>`
+
+--
+
+```text [1]
+(Pdb) break debug1.nested_loop
+Breakpoint 1 at /Users/daveg/debug1.py:5
+(Pdb) 
+```
+
+--
+
+We can set conditional breakpoints:
+
+`<program_file>:<line_number>,<condition>`
+
+--
+
+```text [1]
+(Pdb) break debug1.py:7, number > 500
+Breakpoint 2 at /Users/daveg/debug1.py:7
+(Pdb) 
+```
+
+--
+
+`continue`
+
+Note:
+If we issue the continue command, 
+the program will break when the number x is evaluated 
+to being greater than 500 
+
+--
+
+```text
+(Pdb) continue
+500
+x
+y
+z
+> /Users/daveg/debug1.py(7)nested_loop()
+-> print(number)
+(Pdb)
+```
+
+--
+
+Integrating `pdb` into Programs
+
+--
+
+We can trigger `pdb` by including the `breakpoint()` function in our code. 
+
+--
+
+```python [7]
+numbers = [500, 600, 700]
+letters = ['x', 'y', 'z']
+
+def nested_loop():
+    for number in numbers:
+        print(number)
+        breakpoint()
+        for letter in letters:
+            print(letter)
+
+if __name__ == '__main__':
+    nested_loop()
+```
+
+Note: breakpoint is part of the standard library.
+
+---
+
+## Summary
+
+* Logging
+* Testing
+* Debugging
+
+--
+
+# Questions
+
+--
+
+Slides and code are available on Teams
+
+I have also made everything available on GitHub
+
+--
+
+![code](../assets/img/ghqr.png)
+
+https://github.com/uea-teaching/python-introduction
+
