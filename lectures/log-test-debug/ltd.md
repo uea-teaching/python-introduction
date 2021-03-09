@@ -387,7 +387,7 @@ Involves developing a *test case* that confirms an assertion.
 
 --
 
-## `Unittest`
+## `unittest`
 
 * testing framework
 * test runner
@@ -398,7 +398,7 @@ unittest has some important requirements for writing and executing tests.
 
 --
 
-## `Unittest`
+## `unittest`
 
 * tests are class methods
 * assertion methods *not* `assert` statement
@@ -480,7 +480,7 @@ test_upper (examples.test_basic.TestStringMethods) ... ok
 
 --
 
-## `Unittest`
+## `unittest`
 
 `unittest` supports [test discovery](https://docs.python.org/3/library/unittest.html#test-discovery)
 
