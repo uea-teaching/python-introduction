@@ -181,7 +181,6 @@ Formatter objects configure the final order, structure, and contents of the log 
 ### Formatter
 <!-- .slide: data-auto-animate -->
 
-
 ```python
 formatter = logging.Formatter(
     '%(asctime)s - %(levelname)s - %(message)s')
