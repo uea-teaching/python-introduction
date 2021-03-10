@@ -19,4 +19,4 @@ Move through the slides with the arrow keys, toggle "o" to get an overview.
 * [Python Collections](lectures/collections/)
 * [Input and Output](lectures/input-output/)
 * [Interactive Python](lectures/interactive-python/)
-* [Logging, testing, debugging](lectures/log-test-debug/)
+* [Logging, Testing, Debugging](lectures/log-test-debug/)
