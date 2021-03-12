@@ -62,3 +62,13 @@ txt = f"big: {big:,} floats: {dec:0.5f}, padding: {pad:04d}"
 print(txt)
 
 # %%
+
+s = r"if I want to use\nanother line..."
+print(s)
+
+# %%
+
+s = "if I want to \"quote\" Alice\'s work..."
+print(s)
+
+# %%
