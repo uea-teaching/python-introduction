@@ -427,6 +427,7 @@ Note: One trillion, 123 billion, 345 million ...
 
 --
 
+<!-- .slide: data-auto-animate -->
 ## Escape Characters
 
 Note:
@@ -439,6 +440,10 @@ followed by the character you want to add to the string.
 Many characters that are invisible in normal text may need escaping.
 
 --
+
+<!-- .slide: data-auto-animate -->
+## Escape Characters
+
 
 <div style="font-size: 1.2em;">
 
@@ -456,6 +461,65 @@ if I want to "quote" Alice's work...
 
 --
 
+<!-- .slide: data-auto-animate -->
+## Escape Characters
 
+<div style="font-size: 1.2em;">
+
+```python
+s = "if I want to use\nanother line..."
+print(s)
+```
+
+```text
+if I want to use
+another line...
+```
+<!-- .element: class="fragment" -->
+
+</div>
 
 --
+
+<!-- .slide: data-auto-animate -->
+## Raw Strings
+
+sometimes we *need* to use escape characters
+
+we do this using an `r` prefix
+<!-- .element: class="fragment" -->
+
+Note: Raw string literals are designed to make it easier to include nested characters like quotation marks and backslashes that normally have meanings as delimiters and escape sequence starts.
+
+--
+
+<!-- .slide: data-auto-animate -->
+## Raw Strings
+
+<div style="font-size: 1.2em;">
+
+```python
+s = r"if I want to use\nanother line..."
+print(s)
+```
+
+```text
+if I want to use\nanother line...
+```
+<!-- .element: class="fragment" -->
+
+</div>
+
+--
+
+<!-- .slide: data-auto-animate -->
+## Raw Strings
+
+one use case for a raw string is a `regex` pattern
+
+---
+
+# Python RegEx
+
+the `re` module
+
