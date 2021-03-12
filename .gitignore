@@ -43,3 +43,7 @@
 !lectures/log-test-debug
 !lectures/log-test-debug/*.md
 !lectures/log-test-debug/*.html
+
+!lectures/strings-regex
+!lectures/strings-regex/*.md
+!lectures/strings-regex/*.html
