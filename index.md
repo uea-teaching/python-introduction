@@ -22,3 +22,4 @@ Some slides have additional notes. Press "s" to view speaker notes.
 * [Input and Output](lectures/input-output/)
 * [Interactive Python](lectures/interactive-python/)
 * [Logging, Testing, Debugging](lectures/log-test-debug/)
+* [Strings and Regular Expressions](lectures/strings-regex/)
