@@ -8,6 +8,9 @@
 
 !notebooks/
 !notebooks/*.ipynb
+!notebooks/data/
+!notebooks/data/*.html
+!notebooks/data/*.log
 
 !examples/
 !examples/*.py
