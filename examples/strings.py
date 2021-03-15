@@ -66,9 +66,21 @@ print(txt)
 s = r"if I want to use\nanother line..."
 print(s)
 
+# %% convert raw string
+
+import codecs
+
+s_decoded = codecs.decode(s, 'unicode_escape')
+print(s_decoded)
+
 # %%
 
 s = "if I want to \"quote\" Alice\'s work..."
+print(s)
+
+# %%
+
+s = "funky \x character"
 print(s)
 
 # %%

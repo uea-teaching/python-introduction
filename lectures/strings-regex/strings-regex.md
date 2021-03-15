@@ -484,12 +484,15 @@ another line...
 <!-- .slide: data-auto-animate -->
 ## Raw Strings
 
-sometimes we *need* to use escape characters
+sometimes we *need* to show escape characters
+<!-- .element: class="fragment" -->
 
 we do this using an `r` prefix
 <!-- .element: class="fragment" -->
 
-Note: Raw string literals are designed to make it easier to include nested characters like quotation marks and backslashes that normally have meanings as delimiters and escape sequence starts.
+Note: Raw string literals are designed to make it easier to include nested 
+characters like quotation marks and backslashes that normally have meanings
+as delimiters and escape sequence starts.
 
 --
 
@@ -519,7 +522,28 @@ one use case for a raw string is a `regex` pattern
 
 ---
 
+## Regular Expressions
+
+https://www.regular-expressions.info
+
+more than 200 minor variations
+
+--
+
 # Python RegEx
 
 the `re` module
 
+--
+
+### A Useful Pattern
+
+<div style="font-size: 0.75em;">
+
+`[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+`
+
+</div>
+
+Note: what do you think this RegEx matches?
+
+--
