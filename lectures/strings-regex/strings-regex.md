@@ -522,6 +522,7 @@ one use case for a raw string is a `regex` pattern
 
 ---
 
+<!-- .slide: data-auto-animate -->
 ## Regular Expressions
 
 https://www.regular-expressions.info
@@ -530,9 +531,116 @@ more than 200 minor variations
 
 --
 
+<!-- .slide: data-auto-animate -->
+## Regular Expressions
+
+find *patterns* in **strings**
+
+Note: A regular expression specifies a set of strings that matches it.
+
+--
+
+### Meta Characters
+
+<div style="font-size: 0.75em;">
+
+*symbol* | **result**
+:----:|:----
+ .   | Any Character Except New Line
+ \d  | Digit (0-9)
+ \D  | Not a Digit (0-9)
+ \w  | Word Character (a-z, A-Z, 0-9, _)
+ \W  | Not a Word Character
+ \s  | Whitespace (space, tab, newline)
+ \S  | Not Whitespace (space, tab, newline)
+
+</div>
+
+--
+
+### Anchors
+
+<div style="font-size: 0.75em;">
+
+*symbol* | **result**
+:----:|:----
+\b | Word Boundary
+\B | Not a Word Boundary
+^  | Beginning of a String
+$  | End of a String
+
+</div>
+
+--
+
+### Character Sets
+
+<div style="font-size: 0.75em;">
+
+*symbol* | **result**
+:----:|:----
+[ ]   | Matches Characters in brackets
+[^ ]  | Matches Characters NOT in brackets
+\|    | Either Or
+( )   | Group
+
+</div>
+
+--
+
+### Quantifiers
+
+<div style="font-size: 0.75em;">
+
+*symbol* | **result**
+:----:|:----
+\*    | 0 or More
+\+    | 1 or More
+?     | 0 or One
+{3}   | Exact Number
+{3,4} | Range of Numbers (Minimum, Maximum)
+
+</div>
+
+--
+
+<!-- .slide: data-auto-animate -->
 # Python RegEx
 
 the `re` module
+
+--
+
+<!-- .slide: data-auto-animate -->
+# Python RegEx
+
+`re.search(pattern, string, flags=0)`
+
+Find the first location where the regular expression pattern produces a match.
+<!-- .element: class="fragment" -->
+
+--
+
+<!-- .slide: data-auto-animate -->
+# Python RegEx
+
+`re.split(pattern, string, flags=0)`
+
+Split string by the occurrences of pattern.
+<!-- .element: class="fragment" -->
+
+--
+
+<!-- .slide: data-auto-animate -->
+# Python RegEx
+
+`pattern = re.compile((r"[a|b]")`
+
+Compile a Pattern object.
+<!-- .element: class="fragment" -->
+
+Note: Compiled regular expression objects support the 
+following methods and attributes:
 
 --
 
@@ -545,5 +653,29 @@ the `re` module
 </div>
 
 Note: what do you think this RegEx matches?
+Let's jump into some live examples...
+
+---
+
+## Summary
+
+* Strings
+* RegEx
+* Python `re`
 
 --
+
+# Questions
+
+--
+
+Slides and code are available on Teams
+
+I have also made everything available on GitHub
+
+--
+
+![code](../assets/img/ghqr.png)
+
+https://github.com/uea-teaching/python-introduction
+
