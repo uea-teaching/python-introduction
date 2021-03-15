@@ -33,9 +33,9 @@ Note: Take care with online resources, that they are up to date and accurate
 
 Strings in Python have powerful formatting options for building well crafted output.
 
-However, there are a few details that need to be observed.
-
 Regular expressions are available in many programs, here we look at the Python implementation. 
+
+Note: However, there are a few details that need to be observed.
 
 ---
 
@@ -534,6 +534,13 @@ more than 200 minor variations
 <!-- .slide: data-auto-animate -->
 ## Regular Expressions
 
+[History](https://youtu.be/528Jc3q86F8)
+
+--
+
+<!-- .slide: data-auto-animate -->
+## Regular Expressions
+
 find *patterns* in **strings**
 
 Note: A regular expression specifies a set of strings that matches it.
@@ -657,6 +664,15 @@ following methods and attributes:
 Note: what do you think this RegEx matches?
 Let's jump into some live examples...
 
+--
+
+<!-- .slide: data-background-image="../assets/img/exit2.jpg" data-background-opacity="0.8"-->
+
+# Live Examples
+
+## [Notebooks](https://github.com/uea-teaching/python-introduction/blob/main/notebooks)
+
+
 ---
 
 ## Summary
@@ -667,16 +683,16 @@ Let's jump into some live examples...
 
 --
 
-# Questions
-
---
-
 Slides and code are available on Teams
 
 I have also made everything available on GitHub
 
 --
 
-![code](../assets/img/ghqr.png)
+### code
 
-https://github.com/uea-teaching/python-introduction
+![https://github.com/uea-teaching/python-introduction](../assets/img/ghqr.png)
+
+--
+
+# Questions
