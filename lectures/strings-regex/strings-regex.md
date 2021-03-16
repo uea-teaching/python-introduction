@@ -80,6 +80,7 @@ can be used and mixed.
 </div>
 
 *NB:* newlines, tabs and spaces are all included
+<!-- .element: class="fragment" -->
 
 --
 
@@ -121,6 +122,8 @@ this is the preferred way (PEP 8).
 --
 
 [PEP 8](https://www.python.org/dev/peps/pep-0008/) guidelines prefer parentheses
+
+Note: PEP 8 is the Python style guide.
 
 --
 
@@ -256,6 +259,28 @@ the opposite of `split` is `join`
 <!-- .element: class="fragment" -->
 
 Note: the join string is inserted between elements
+
+--
+
+<!-- .slide: data-auto-animate -->
+## String Methods
+
+```python
+s = "val1, val2, \nval3, val4"
+print(s.split(","))
+print([x.strip() for x in  s.split(",")])
+```
+
+```text
+['val1', ' val2', ' \nval3', ' val4']
+
+['val1', 'val2', 'val3', 'val4']
+```
+<!-- .element: class="fragment" -->
+
+
+use `strip` to remove whitespace
+<!-- .element: class="fragment" -->
 
 --
 
@@ -544,6 +569,15 @@ more than 200 minor variations
 find *patterns* in **strings**
 
 Note: A regular expression specifies a set of strings that matches it.
+
+--
+
+### Ordinary Characters
+
+`'A', 'a', 'X', '5', 'abc'`
+
+Note: Ordinary characters are the simplest regular expressions. 
+They match themselves exactly and do not have a special meaning in their regular expression syntax.
 
 --
 
