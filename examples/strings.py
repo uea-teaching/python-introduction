@@ -25,6 +25,12 @@ print(s.split(","))
 
 # %%
 
+s = "val1, val2, \nval3, val4"
+print(s.split(","))
+print([x.strip() for x in  s.split(",")])
+
+# %%
+
 parts = ["one", "two", "three"]
 print(", ".join(parts))
 
