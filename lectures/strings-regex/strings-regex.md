@@ -325,7 +325,7 @@ print(txt.format(age))
 ```text
 -------------------------------------------------------------
 IndexError                  Traceback (most recent call last)
-~/Dropbox/dev/python-introduction/examples/strings.py in 
+~/strings.py in 
       39 age = 42
       40 txt = "Bob is {} years old, Alice is also {}!"
 ----> 41 print(txt.format(age))
