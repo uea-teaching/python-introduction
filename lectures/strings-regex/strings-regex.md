@@ -126,7 +126,7 @@ this is the preferred way (PEP 8).
 
 Note: PEP 8 is the Python style guide.
 
---
+---
 
 <!-- .slide: data-auto-animate -->
 ## String Methods
@@ -283,7 +283,7 @@ print([x.strip() for x in  s.split(",")])
 use `strip` to remove whitespace
 <!-- .element: class="fragment" -->
 
---
+---
 
 <!-- .slide: data-auto-animate -->
 ## String Formatting
