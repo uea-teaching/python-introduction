@@ -25,6 +25,7 @@ Note: Take care with online resources, that they are up to date and accurate
 ## Contents
 
 - Python Strings
+- Regular Expressions
 - Python RegEx
 
 --
@@ -700,12 +701,12 @@ Let's jump into some live examples...
 
 --
 
-<!-- .slide: data-background-image="../assets/img/exit2.jpg" data-background-opacity="0.8"-->
+<!-- .slide: data-background-image="../assets/img/exit2.jpg" -->
+# Examples
 
-# Live Examples
+<div style="height:300px; width:100%; clear:both;"></div>
 
-## [Notebooks](https://github.com/uea-teaching/python-introduction/blob/main/notebooks)
-
+[Notebooks](https://github.com/uea-teaching/python-introduction/blob/main/notebooks)
 
 ---
 
