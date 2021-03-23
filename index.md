@@ -23,3 +23,4 @@ Some slides have additional notes. Press "s" to view speaker notes.
 * [Interactive Python](lectures/interactive-python/)
 * [Logging, Testing, Debugging](lectures/log-test-debug/)
 * [Strings and Regular Expressions](lectures/strings-regex/)
+* [Managing Packages and Environments](lectures/environments/)
