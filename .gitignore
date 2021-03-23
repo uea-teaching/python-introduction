@@ -17,6 +17,8 @@
 !examples/2489.txt
 !examples/test.txt
 !examples/*.json
+!examples/git-env/
+!examples/git-env/*.yml
 
 !lectures/
 
@@ -50,3 +52,7 @@
 !lectures/strings-regex
 !lectures/strings-regex/*.md
 !lectures/strings-regex/*.html
+
+!lectures/environments
+!lectures/environments/*.md
+!lectures/environments/*.html
