@@ -496,9 +496,9 @@ I have also made everything available on GitHub
 
 --
 
-### code
+### [code](https://github.com/uea-teaching/python-introduction)
 
-![https://github.com/uea-teaching/python-introduction](../assets/img/ghqr.png)
+![qr](../assets/img/ghqr.png)
 
 --
 
