@@ -75,7 +75,7 @@ specific collection of conda packages that you have installed.
 <!-- .slide: data-auto-animate -->
 ## Conda Environments
 
-Conda *environments* go beyond Python modules
+`conda` environments go beyond Python modules
 
 Note: Conda is a general-purpose package management system, 
 designed to build and manage software of any type from any language. 
@@ -118,6 +118,8 @@ Compare with the `nVidia cuda` install instructions!
 Create a new environment
 
 `conda create -n myenv python=3.8`
+
+Note: OK, let's look at how to create an environment.
 
 --
 
@@ -185,7 +187,7 @@ your environment at creation.
 <!-- .slide: data-auto-animate -->
 ## Conda Environments
 
-Deactivate your virtual environment
+deactivate your virtual environment
 
 `conda deactivate`
 
@@ -202,13 +204,15 @@ install additional packages
 
 `conda install -n myenv [package]`
 
+failure to specify `-n myenv` will install the package to the root installation
+<!-- .element: class="fragment" -->
+
 Note:
 to install additional packages only to your virtual environment, 
 enter the following command where myenv is the name of your 
 environment, and [package] is the name of the package you wish to install. 
 
-Failure to specify “-n yourenvname” will install the 
-package to the root Python installation.
+Failure to specify `-n myenv` will install the package to the root installation.
 
 --
 
@@ -236,7 +240,7 @@ dependencies:
 The first line  sets the new environment name
 <!-- .element: class="fragment" -->
 
-Note: You can create an environment file (environment.yml) manually.
+Note: For better control, you can create an environment file (environment.yml) manually.
 Useful for sharing code.
 
 --
