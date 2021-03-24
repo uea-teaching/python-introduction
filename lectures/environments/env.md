@@ -422,7 +422,6 @@ setup(
     license="MIT",
     packages=["sample_package"],
 )
-
 ```
 
 Note: this is an example. 
